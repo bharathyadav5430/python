@@ -1,0 +1,60 @@
+Table of Contents
+Introduction
+***Chapter One: Make a Start
+Python 3 Installation
+Executable Installer Run It
+***Chapter Two: Python Variables and Data Types
+Python Variables
+Naming Variables
+Python Datatypes Python Strings
+Python Numbers
+***Chapter Three: Python Lists and Tuples
+Modifying Lists
+Append Method
+Del Method
+Pop Method
+Remove Method
+List Organization
+The sort() Method
+Index Errors
+Create A Loop
+List Slicing
+Copying
+Python Tuples Looping
+***Chapter Four: Python Conditionals
+The if-else Statement
+The if-elif-else Chain
+If Statements and Lists Multiple Lists
+***Chapter Five: Python Dictionaries
+Removing Pairs
+Looping
+The sorted() Method
+Nesting
+Random Dictionary Methods
+***Chapter Six: Input and Python Loops
+The input() Function
+While Loops
+The Break Keyword
+Loops, Lists, Dictionaries
+***Chapter Seven: Python Functions Defining Functions
+Arguments and Parameters
+Positional Arguments
+Keyword Arguments
+Default Values
+Returning Values
+Function and Dictionary
+Function and While Loop
+***Chapter Eight: Object-Oriented Programming
+Leopard Class
+Explaining the __init__() Method
+The Fish Class The Bike Class Proper Modification of Values
+***Chapter Nine: The Inheritance Class
+Child Class in Python 2.7
+Child Class Attributes
+Overriding Methods from Parent Class
+***Chapter Ten: Importing Classes
+Importing Multiple Classes
+Importing Module
+Importing All Classes
+Conclusion
+References 
