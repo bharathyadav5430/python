@@ -1,0 +1,198 @@
+*****Chapter Two: Python Variables and Data Types****
+When you run a file with the extension .py on Python, it suggests that you are running a Python program. The editor runs the program in a Python interpreter. The Python interpreter spots Python keywords, reads them, identifies them, and acts accordingly. Take the example of the print keyword. When the Python interpreter sees this keyword, it can print whatever you put in the parenthesis. When you write code in the Python editor, you will see that the Python editor highlights your code in different colors. That is how it recognizes different types of code. This feature of Python is known as syntax highlighting and is very useful as you learn to write Python programs.
+Python Variables
+Python variables are like containers that you can fill in with different types of data values. Python differs from other programming languages because it does not have any command for the declaration of a variable. You can create a variable just by assigning it a specific value. In the following example, I will create a variable and assign it some value. Please keep in mind that I am using a Python interpreter for the initial stages. I will move on to the Python editor in the later chapters.
+>>> greetings = "Hello, I am here to learn Python."
+>>> print(greetings)
+Hello, I am here to learn Python.
+>>>
+The name of the variable is greetings. The variable holds a full sentence as its unique value. The print keyword, as I said, is used to display the value of the variable. The value of a variable can be easily replaced if you pack it up with another value. See the following example.
+>>> greetings = "Hello, I am here to learn Python."
+>>> print(greetings)
+Hello, I am here to learn Python.
+>>>
+>>> greetings = "This is the world of Python."
+>>> print(greetings)
+This is the world of Python.
+>>>
+Naming Variables
+When you are naming a variable, you must adhere to a couple of guidelines and rules. If you break some of the rules, you will see errors in the code. Even if missing out on the rules does not trigger errors, breaking the rules will make the code look vague and abstract. The success of a programmer is that his code should be easy to understand and read. You must keep the following rules in mind when you are creating variables.
+  The names of variables may contain numbers, letters, and underscores. They may start with an underscore and a letter, but they cannot start with a number. For example, a variable can be written as greetings_77 but it cannot be written as 77_greetings.
+  You must avoid the use of Python keywords while naming a variable. For example, you cannot name a variable as print because print is a Python keyword.
+  If you can keep the names of variables as much descriptive as possible, it will help you better read and understand the code when you come back to at a later stage. For example, greetings are better than simply writing g.
+Writing variable names is a continuous practice in Python. You will learn how to create better variable names as you move further into the world of coding.
+When you are creating variables, it is common to get errors. You should make sure that you are not misspelling different words. Take a look at the possible errors and try to learn how to avoid them and fix them.
+I will use the same variable greetings to show how you can end up getting an error message.
+>>> greetings = "This is the world of Python."
+>>> print(greeting)
+Traceback (most recent call last):
+File "<pyshell#6>", line 1, in <module> print(greeting)
+NameError: name 'greeting' is not defined
+>>>
+All I did was writing the wrong spelling in the code. What makes Python different from other programming languages is that it displays the error message which tells you the exact line on which you have made the error. This helps rectify the errors and clean the code.
+By writing the wrong spelling, I don’t suggest that Python recognizes the wrong or right spelling. I am trying to suggest that it reads the name of the variable and matches it with the command you have entered. In case of a mismatch, the error message pops up. So, even if you misspell the word while you allot a name to a variable, Python does not declare it an error.
+>>> greetings = "This is the world of Python."
+>>> print(gretings)
+This is the world of Python.
+>>>
+I have deliberately misspelled the word greetings but still, Python read it and ran the code. A lot of programming errors happen just because of wrong spellings. You may call them typos. They can be easily managed if you read your code with close attention.
+Python Datatypes
+There are different types of data that you have to use in programming. Some are simple texts while others are integers or lists. Python supports a diversity of datatypes. However, you have to designate the datatype when you create one so that Python can recognize it easily and process it as per your wishes. In the following section, I will shed light on several data types that I will be using in various code snippets in the book.
+Datatypes, in a brief look, are as under:
+#This is Python list
+>>> a = ["tomato, potato, garlic, ginger, pumpkin"]
+>>> print(a)
+['tomato, potato, garlic, ginger, pumpkin']
+>>> #This is python frozenset
+>>> a = frozenset({"tomato, potato, garlic, ginger, pumpkin"})
+>>> print(a)
+frozenset({'tomato, potato, garlic, ginger, pumpkin'})
+>>> #This is python set
+>>> a = {"tomato, potato, garlic, ginger, pumpkin"}
+>>> print(a)
+{'tomato, potato, garlic, ginger, pumpkin'}
+>>> #This is python tuple
+>>> a = ("tomato, potato, garlic, ginger, pumpkin")
+>>> print(a)
+tomato, potato, garlic, ginger, pumpkin
+>>> #This is a dictionary
+>>> a = {"fruit" : "tomato", "veg: potato", "veg" : "garlic", "veg" : "ginger", "veg" : "pumpkin"}
+SyntaxError: invalid syntax
+>>> a = {"fruit" : "tomato", "veg": "potato", "veg" : "garlic", "veg" : "ginger", "veg" : "pumpkin"}
+>>> print(a)
+{'fruit': 'tomato', 'veg': 'pumpkin'}
+>>> a = {"fruit" : "tomato", "veg: potato", "veg1" : "garlic", "veg2" : "ginger", "veg3" : "pumpkin"}
+SyntaxError: invalid syntax
+>>> a = {"fruit" : "tomato", "veg": "potato", "veg1" : "garlic", "veg2" : "ginger", "veg3" : "pumpkin"}
+>>> print(a)
+{'fruit': 'tomato', 'veg': 'potato', 'veg1': 'garlic', 'veg2': 'ginger', 'veg3': 'pumpkin'}
+In the above I have turned a string into different datatypes. In the dictionary section of the code, you will see some errors. One error is because of a missing quote marks while the other error is because of similar dictionary names. Dictionaries are important as they allow users to store their important data in the form of pairs. They are used in a number of ways.
+Python Strings
+The first data type is Python strings. Most of the Python programs have to collect and process the data, store it, and use it. One of the most common datatypes is known as strings. They appear to be simple at first glance, however they can be used in several ways. A string is popularly written in the form of characters. Anything that comes inside the quotation marks is dubbed as a string. You can use single or double quotes to create a string. The flexibility of using different types of quote marks is not without reason. It serves several purposes. See that in the following code snippet.
+While single quotes allow you to write the code easily, double quotes allow you to use apostrophes in the text. In the following example, you will learn to use both types of quotes and their dos and don’ts.
+>>> a = "I am learning Python."
+>>> print(a)
+I am learning Python.
+>>> a = 'I am learning Python.'
+>>> print(a)
+I am learning Python.
+>>> a = "I am learning Tack's book on Python."
+>>> print(a)
+I am learning Tack's book on Python.
+>>> a = 'I am learning Tacky's book on Python.'
+SyntaxError: invalid syntax
+>>>
+Strings are very interesting if you get a full grasp of the concept. You can change the text into lower and upper texts. I will use the same string example and experiment on it to see how we can change its case.
+>>> a = "I am learning Python."
+>>> print(a.title())
+I Am Learning Python.
+>>> print(a.upper())
+I AM LEARNING PYTHON.
+>>> print(a.lower()) i am learning python.
+>>>
+One of the easiest tasks is changing the case as you have seen. There are three keywords: upper, lower, and title cases to change any string you have created for your code. You can see in the code that all the three keywords are accompanied by () brackets. It is called a method. A method can be defined as a kind of action that Python performs on a certain piece of data. Even a character as little as a dot is meaningful in Python coding. The dot that comes after the string's name directs Python to deploy the method, which can be the title, lower, upper cases. Each method has parenthesis at the end to fill in additional information. I have left the parenthesis empty in the abovementioned code because I did not have to fill it in with additional information. However, in the next few chapters, I will explain how you can use the parenthesis to perform different types of tasks. They are quite interesting if you can use it in the right way.
+Out of all the methods, the lower() method is specifically used to store data in Python programs. You might have browsed a website that asked you to write in small letters when you sought to enter some information on the database. Still, you very possibly might have entered the information in a capital case. The lower() method helps convert the strings into the lower case, even if a user like you entered the information in the capital case.
+Many Python programs invite data for storage purposes and then use it. Sometimes you have two or more strings that you have to combine into one. The process is known as string concatenation. For example, you can combine the name of the state and the country's name after you receive them independently. The odds are high that you invite the users' information separately because usually you have to create two columns on your interface to facilitate the users. When you receive them separately, you can combine them with a simple method. See the following example.
+>>> state_name = "california"
+>>> country_name = "United States"
+>>> Location_info = state_name + " " + country_name
+>>> print(Location_info) california United States
+>>>
+You can see that there is something wrong with the code. The display is good, but it is not neat. We can add a comma to the code and see how we can use it. From here, I will shift from Python IDLE to Python text editor to give you a feel of how you will write a program. Let us see how to switch from Python IDLE to the text editor.
+The first step is to open Python IDLE or interpreter. Go to the File menu and click New File. A new window will pop up on your computer screen. This is a Python text editor. You can write the code on it. When you are done writing the code, you should click on Run on the top menu bar. The editor will ask you to save the code first and then run it. You need to save the code to your desired location and Python will run your code. One important point to note is that when you run the code, a new window of Python IDLE will pop up to display the result of the code. In the next code samples, you will see the code that is written in Python editor first, and attached to its tail will be the result of the code. The second result will start from the word Restart. This is how you will easily learn it and practice it on your computer system. Let us jump to the Python editor now. state_name = "California"
+country_name = "United States"
+Location_info = state_name + " , " + country_name print(Location_info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+California, United States
+>>>
+This code is neat and clean as I have added a comma to it. The most important thing to learn from this code sample is the plus operator used to combine the two strings. We can concatenate more than two strings as well. I will now add the name of the place to the concatenated string.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name print(location_info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Silicon Valley, California , United States
+>>>
+I will now use the same code to display a message to the user after he has entered his location information. place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name print("Hi, I want to visit " + location_info.title() + " in the next month.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, I want to visit Silicon Valley, California, United States in the next month. >>>
+Let change the case of the strings and see how it works in the program. place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name print("Hi, I want to visit " + location_info.upper() + " in the next month.") print("Hi, I want to visit " + location_info.lower() + " in the next month.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, I want to visit SILICON VALLEY, CALIFORNIA, UNITED STATES in the next month.
+Hi, I want to visit silicon valley, california, united states in the next month.
+>>>
+You always have the option of creating a concatenated string and storing it in a variable so that you can use it later on as per your needs.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name info = "Hi, I want to visit " + location_info.title() + " in the next month." print(info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, I want to visit Silicon Valley , California , United States in the next month.
+>>>
+Python allows you to neatly format your strings by adding tabs, spaces and other symbols.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name info = "\tHi, I want to visit " + location_info.title() + "\t in the next month." print(info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, I want to visit Silicon Valley , California , United States in the next month.
+>>>
+The tab feature has worked perfectly. Now I will use the \n feature to start each word of the sentence on a new line.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name info = "\nHi, \nI \nwant \nto \nvisit " + location_info.title() + " \nin the \nnext month."
+print(info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi,
+I
+want to
+visit Silicon Valley, California, United States in the next month.
+>>>
+Python Numbers
+Numbers are more often used in programming to do calculations or store data. For example, if you are developing a Python game, you need to keep the scores calculated. Python integers are the simplest form of numbers that you can use. I will do some calculations by using different mathematical operators. a = 3 + 6 print(a) a = 10 - 5 print(a) a = 3 * 6 print(a) a = 18 / 6 print(a) a = 3 ** 6 print(a) a = 15 ** 6 print(a)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+9
+5
+18
+3.0
+729
+11390625
+>>>
+In the next example, I will use multiple operators to see how Python maintains the order of mathematics.
+a = 3 + 6 * 18 print(a) a = 10 - 5 + 45 print(a) a = 3 * 6 + 50 / 30 print(a) a = 18 / 6 * 50 print(a) a = (3 * 6 )- 23 print(a) a = (15 ** 6) + 100 print(a)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+111
+50
+19.666666666666668
+150.0
+-5
+11390725
+>>>
+The next number type is float. This is the decimal form of integer. See how to use them. a = 3.0 + 6.344 * 18.234 print(a)
+a = 10.1 - 5.56 + 45.22
+print(a)
+a = 3.45 * 6.3 + 50.09 / 30.1 print(a)
+a = 18.22 / 6.1 * 50.89 print(a)
+a = (3.21 * 6.23 )- 23.22 print(a)
+a = (15.123 ** 6.23) + 100.456 print(a)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+118.67649600000001
+49.76
+23.399119601328902
+152.00259016393443
+-3.2216999999999985
+22343252.55463075
+>>>
+When you mix up the datatypes without proper procedure, you get an error in return. For example, you have to mix up date with day to display a string statement. This will trigger an error if you do not fill in the code with the right datatype and through the right process.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name date = 4
+info = "Hi, I want to visit " + location_info.title() + " in the next month on" + date + " th." print(info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 6, in <module> info = "Hi, I want to visit " + location_info.title() + " in the next month
+on" + date + " th."
+TypeError: can only concatenate str (not "int") to str
+>>>
+The error is a type error. Python is unable to recognize the information you have put in. In simple words, the wrong method to fill in the code has confused Python. So, you have to turn the integer into a string first to display it in the right way. The technique is simple, but you will have to memorize it.
+place_name = "Silicon Valley" state_name = "California" country_name = "United States"
+location_info = place_name + " , " + state_name + " , " + country_name date = 4
+info = "Hi, I want to visit " + location_info.title() + " on the " + str(date) +
+"the of July" print(info)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, I want to visit Silicon Valley, California, United States on the 4th of July
+>>>
+I have told python that I have to add an integer to the string statement
