@@ -1,0 +1,347 @@
+*****Chapter Three: Python Lists and Tuples******
+This chapter will walk you through the concept of Python lists. I will explain what Python lists are and how you can use them in Python programs. Python lists are one of the most amazing features of Python programming. They allow you to fill in loads of information in a succinct manner. They allow you to pack up tons of information in an easy-to-access format. You can add millions of items to Python lists. Python lists are considered one of the robust features of Python programming.
+A Python list is packed up with a streak of items that are adjusted in a specific order. A list can be filled with alphabets and digits. As a list may contain more than one element, the traditional naming practice for lists suggests that you give them a plural name. Let us assume that you are developing a game where a player has to set up an office with necessary items and sell the office to the highest bidder.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+>>>
+The output is alright, except that you do not want your game users to see this output. It should be in an easy-to-digest form. Rather than printing the complete list, you can access certain elements in the list by a simple method. For example, the player in your game wants to see which item has been included in the office set up. To see that he should be able to access different items in the list. Here is the method you can include in your program to help your players confirm the inclusion of different items.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+print(officeitems[0]) print(officeitems[2]) print(officeitems[4]) print(officeitems[5]) print(officeitems[6])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py printer fan chair computer system table lights
+>>>
+When you are writing the code for your game, you may run into a serious problem. Your player may want to access the item no 10 in the list, which does not exist in the first place as there are only seven items on the list. When the player tries to do that, the result will be an index error.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+print(officeitems[10])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 2, in <module> print(officeitems[10])
+IndexError: list index out of range
+>>>
+You can deploy string methods to make the lists look neat and clean. I will use the title, lower and upper case methods to format the items from the list.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+print(officeitems[0].title())
+print(officeitems[1].upper()) print(officeitems[2].lower())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Printer
+SCANNER
+fan
+>>>
+One important point to note regarding lists is that the first item in the list tends to start from zero. If you fill it in with 1, it means you are trying to access the second item on the list. If you want to access the fifth item on the list, you will have to use index number 3. There is another way to access items on the list. You can access the item by using negative indices. In the following example, I will access items both from positive and negative indices.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+print(officeitems[0]) print(officeitems[1]) print(officeitems[2]) print(officeitems[-1]) print(officeitems[-2]) print(officeitems[-3])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py printer scanner fan table lights computer system
+chair
+>>>
+While the positive index starts from the left side, the negative index starts from the right side. It will pick the values from the end of the list and display them to the user.
+Let us make the game more interesting by adding statements and using items from the list to build those statements. Each time your player buys something from the market and adds it to the office, he will receive a message on the screen that informs him how much he has achieved. I will use individual values from the list and apply the method of concatenation to create a message.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+comment = "Dear player! You have successfully purchased a " + officeitems[2].title() + "." print(comment)
+comment = "Dear player! You have successfully purchased a " + officeitems[0].upper() + "." print(comment)
+comment = "Dear player! You have successfully purchased a " + officeitems[2].lower() + "." print(comment)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Dear player! You have successfully purchased a Fan.
+Dear player! You have successfully purchased a PRINTER.
+Dear player! You have successfully purchased a fan.
+>>>
+You can use the same items in different ways. All it needs a pinch of creativity. When the player has installed the items in the office, you can display a message on the screen to show that the items are operational. officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+comment = "Dear player! The " + officeitems[2].title() + " is operational." print(comment)
+comment = "Dear player! The " + officeitems[0].title() + " is operational." print(comment)
+comment = "Dear player! The " + officeitems[6].title() + " are operational." print(comment)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Dear player! The Fan is operational.
+Dear player! The Printer is operational.
+Dear player! The Table Lights are operational.
+>>>
+Modifying Lists
+When you have created a list, you can easily change its items, add more items to it, and remove certain items. In this sense, lists are very flexible. Most of the lists that you create are dynamic. You can offer your player a choice to add different items to your list and remove items from the list of office items to increase or decrease the office's value. The faster he sells or the bigger he sells matter for the overall gaming score of the player.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+# I will change the value of different items at different indices officeitems[0] = 'water dispenser' print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['water dispenser', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+>>>
+Append Method
+In the first line, I have displayed the original list. In the next line of code, I will change the first item's value and redisplay the list. The player has successfully replaced the item to boost the sale value of the office. You also can allow your player to keep adding more items to the office to beef up the value. One of the easiest and the most amazing way to add items to a list is by using the append method. This method is the simplest of adding new elements to a list. When you apply the append method, the element you want to add will be added to the end of the list. The player does not have a choice to add it to his favorite index.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+officeitems.append('water dispenser') print(officeitems)
+officeitems.append('multimedia projector') print(officeitems)
+officeitems.append('air conditioner') print(officeitems) officeitems.append('laptop') print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights', 'water dispenser']
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights', 'water dispenser', 'multimedia projector']
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights', 'water dispenser', 'multimedia projector', 'air conditioner']
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights', 'water dispenser', 'multimedia projector', 'air conditioner', 'laptop']
+>>>
+The append method helps you build lists in perfect order. This is the most efficient way to build lists in a perfectly dynamic way. You can even start appending elements to an empty list. This is how your player will have more freedom to start right from scratch. He will see an empty office and equip it with the items he wants to add to it.
+While the append method adds elements to the end of your lists, you can use the insert method to add items to the position of your choice. The first you need to do is to specify the index of each new element. See the following example.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+officeitems.insert(0, 'air conditioner') print(officeitems)
+officeitems.insert(2, 'multimedia projector') print(officeitems)
+officeitems.insert(3, 'water dispenser') print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['air conditioner', 'printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['air conditioner', 'printer', 'multimedia projector', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['air conditioner', 'printer', 'multimedia projector', 'water dispenser', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+>>>
+Del Method
+There may be occasions in the game when a player wants to remove certain items from the office to adjust the office to his desires. You can easily remove different items from a list by a simple method. The first method is that of the del statement. Let us check how you can add this method to your code to make the game more interactive.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems) del officeitems[0] print(officeitems) del officeitems[1] print(officeitems) del officeitems[2] print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['scanner', 'table', 'chair', 'computer system', 'table lights']
+['scanner', 'table', 'computer system', 'table lights']
+>>>
+Pop Method
+While the del method demands from you that you mention the index number, you always have the choice to use another method, the pop() method, to remove items from your lists. This is helpful if you want to give your players the freedom to randomly remove items from the office setup.
+The pop() method tends to eject items from the end of the list. However, you can use the item later on. This is why the pop() method is different from the del() method. Imagine that the office items are stacked up one upon another and you get the opportunity to pick and throw out from the top one by one. This is how the pop() method works.
+I will use the pop() method until the list stands empty to show how a player can empty an office off the items if he wants to.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems) popped_officeitems = officeitems.pop() print(officeitems) print(popped_officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system'] table lights
+['printer', 'scanner', 'fan', 'table', 'chair']
+computer system
+['printer', 'scanner', 'fan', 'table'] chair
+['printer', 'scanner', 'fan'] table
+['printer', 'scanner'] fan
+['printer'] scanner
+[] printer
+>>>
+Once there are no more items in the list but you still use the pop() method, it will return an error that will look like the following.
+Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 24, in <module> popped_officeitems = officeitems.pop()
+IndexError: pop from empty list
+In the following section, I will show you how you can use the popped item in the code. If you want your player to explain to his boss why he removed an item from the item, you can add another line of code to your program.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+popped_officeitems = officeitems.pop()
+print("I have sold " + popped_officeitems.title() + " because it was not adding the desired value to the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+I have sold Table Lights because it was not adding the desired value to the office.
+>>>
+Unlike what most people think, the pop() method allows you to remove items from a list at specific positions of your choice. You have to fill in the parenthesis with the desired index number.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems)
+popped_officeitems = officeitems.pop(3)
+print("I have sold the " + popped_officeitems.title() + " because it was not adding the desired value to the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+I have sold the Table because it was not adding the desired value to the office.
+>>>
+Remove Method
+Another method to remove items from a list by using the remove method. Many times you do not know the specific position of a value that you want to remove. In that case, you can remove the item by using the value of that item. To do that you have to fill in the parenthesis of the remove() method with the value.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems) officeitems.remove('scanner') print(officeitems) officeitems.remove('table') print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['printer', 'fan', 'table', 'chair', 'computer system', 'table lights']
+['printer', 'fan', 'chair', 'computer system', 'table lights']
+>>>
+Just like you used the popped value later on in the code, you can also use the removed value from the item.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights'] print(officeitems) removeditem = 'scanner' officeitems.remove(removeditem)
+print("I have sold the " + removeditem.title() + " because it was not adding the desired value to the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'chair', 'computer system', 'table lights']
+I have sold the Scanner because it was not adding the desired value to the office.
+>>>
+List Organization
+More often when you create lists, they flow in a kind of unpredictable order. You cannot always control the order in which the users provide data to the program. However, you can bring that information into perfect order later on. It may happen more often than you want to make the information presentable. This is the reason you should bring it into perfect order. There are several ways by which you can order lists in Python.
+The sort() Method
+The sort method of Python makes it fun to sort a list. I will use the same list of officeitems and experiment on it to see how the list gets organized. The sort() method sorts lists in an alphabetical order.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems) officeitems.sort() print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'table lights'] ['fan', 'printer', 'scanner', 'table', 'table lights']
+>>>
+The sort() method has changed the list into a perfect alphabetical order. You cannot revert to the original order once you have sorted your list. The sort() can also be used to order the list in the reverse alphabetical order.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems) officeitems.sort(reverse=True) print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'table lights']
+['table lights', 'table', 'scanner', 'printer', 'fan']
+>>>
+Coupled with the sort() method is the sorted() function. While the sort() method permanently reorders a list, the sorted() function makes temporary changes.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems) print(sorted(officeitems)) print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'table lights']
+['fan', 'printer', 'scanner', 'table', 'table lights'] ['printer', 'scanner', 'fan', 'table', 'table lights']
+>>>
+You can see that the sorted() function temporarily changed the order of the list. When I printed the list without the sorted() function, it comes back into its original order.
+Index Errors
+As errors are common in coding, you may run into index errors in lists. One of the most common types of errors with lists is the index error. You may confront this type of error more often when you work on lists. However, you can easily avoid that if you know at which point the index starts. Let us see first how the error message looks like.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems[5])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 2, in <module> print(officeitems[5])
+IndexError: list index out of range
+>>>
+The list contains five items, but when I invoke the index number 5, I get an error message. Just as for strings, the index for lists also starts at zero.
+Index errors come up more often if the list is a long one. The best practice to work with long lists is to know the exact length of the list. Once you know the length, you can sort out each item's index number in the list. See the following method to check the length of the list.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] len(officeitems)
+Create A Loop
+Python lists can be operated with loops. Coming back to the game. If you want your player to have the option of displaying all the items that he has set up in his office, you can run a loop through your list. This is helpful if you have added another character to your game who asks the player about the total number of items that he has bought for the office. Each item in the list will be neatly displayed. The for loop in Python will repeat the same action with each item.
+I will use the same list of office items and print each item by looping the list with a for loop. Let us now create and build a for loop to print out each item you have bought for the office. officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print(officeitem)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py printer scanner fan table table lights
+>>>
+Python for loop has looped through and printed each item on the list. When you are writing this code, you may hit an error which can be hard to explain because there will be no exact error message on the interpreter screen. See the following example.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table', 'table lights']
+['printer', 'scanner', 'fan', 'table', 'table lights']
+['printer', 'scanner', 'fan', 'table', 'table lights']
+['printer', 'scanner', 'fan', 'table', 'table lights'] ['printer', 'scanner', 'fan', 'table', 'table lights']
+>>>
+All I did was to add an s to officeitem in the last line of code. Python interpreted it differently and looped through the entire list and displayed it repetitively. Instead of getting an error message, Python changes the results.
+What exactly I did in the code. In the first line of code, I have defined a list, namely officeitems. In the next line, I have defined a for loop. This line instructs Python to pick a name from the list and store it in the newly created variable officeitem. It is not necessary to name a variable in this way, but it is easy to remember. You can name it as you like. In the next line, I told Python to print each name that I had stored in the new variable. Python repeats lines for each item in the list. To kill the confusion about the name of the variable, I will now change the variable's name.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for things in officeitems:
+print(things)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+printer scanner fan table table lights
+>>>
+Looping is an important concept in computer programming because it is used to automate some recitative tasks. If your list is packed up with a million items, Python loops will repeat the steps a million times and in a very fast manner.
+The Python for loop is amazing because it allows you to experiment with the office items quickly. You have to set the code right and the entire list will be fully automated. I will now take each item from the list and display a message on the Python interpreter screen. If you want your player to tell his boss he has purchased each item at a discount price and from a quality production house, you can slightly change the code and display the message most uniquely.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print("I have purchased the " + officeitem.lower() + " at a discount price
+from TopQuality Productions.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I have purchased the printer at a discount price from TopQuality Productions.
+I have purchased the scanner at a discount price from TopQuality Productions.
+I have purchased the fan at a discount price from TopQuality Productions.
+I have purchased the table at a discount price from TopQuality Productions.
+I have purchased the table lights at a discount price from TopQuality Productions.
+>>>
+So, this is getting interesting now. This is how you can develop your game in a brilliantly interactive manner. If you want the player to speak more than one line, you can pair up more sentences to the reply. Each line will be executed in the order you write it in the code. I will now add a second line of code to the response of the player.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print("I have purchased the " + officeitem.lower() + " at a discount price
+from TopQuality Productions.") print ("I hope the " + officeitem.lower() + " will add more value to the
+office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I have purchased the printer at a discount price from TopQuality Productions. I hope the printer will add more value to the office.
+I have purchased the scanner at a discount price from TopQuality Productions.
+I hope the scanner will add more value to the office.
+I have purchased the fan at a discount price from TopQuality Productions.
+I hope the fan will add more value to the office.
+I have purchased the table at a discount price from TopQuality Productions.
+I hope the table will add more value to the office.
+I have purchased the table lights at a discount price from TopQuality Productions.
+I hope the table lights will add more value to the office.
+>>>
+This is how you can add a hundred lines if your program or game requires that. You also can add a finishing note to the end of a block of code. The finishing block of code executes without repetition. I will now add a reply from the boss in the game who has heard what the player said about purchasing items.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print("I have purchased the " + officeitem.lower() + " at a discount price
+from TopQuality Productions.") print ("I hope the " + officeitem.lower() + " will add more value to the
+office.")
+print("Thanks for making the purchase. Hope you will be able to sell out the office this month. After all, you won't like to be deprived of your bonus.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I have purchased the printer at a discount price from TopQuality Productions. I hope the printer will add more value to the office.
+I have purchased the scanner at a discount price from TopQuality Productions.
+I hope the scanner will add more value to the office.
+I have purchased the fan at a discount price from TopQuality Productions.
+I hope the fan will add more value to the office.
+I have purchased the table at a discount price from TopQuality Productions.
+I hope the table will add more value to the office.
+I have purchased the table lights at a discount price from TopQuality Productions.
+I hope the table lights will add more value to the office.
+Thanks for making the purchase. Hope you will be able to sell out the office this month. After all, you won't like to be deprived of your bonus.
+>>>
+All I did was to remove the space before the print statement by which I want to end the for loop. This explains how crucial a role spaces play in Python programming. You miss out on an indentation and you will see an error on the screen.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights']
+for officeitem in officeitems: print(officeitem)
+Expected an indented block
+List Slicing
+You can slice a list to work with a portion of a list. This is helpful if you are building a long list of items and you have to work only with a handful of items. I will use the same list for slicing.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems[1:4])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['scanner', 'fan', 'table']
+>>>
+The result contains only the items that I have sliced out of the original list. The output comes in the form of the original structure of the list. The sliced part of the list can also be named as a subset of the list. If you omit the index's start, the subset of the list will start from the first item.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems[:4])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'fan', 'table']
+>>>
+Similarly, you can omit the second half of the range index. officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems[2:])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['fan', 'table', 'table lights']
+>>>
+The negative indexing is also available for Python lists.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print(officeitems[-2:])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['table', 'table lights']
+>>>
+You also can loop through the subset of a list or the slice of a list just like we did with a complete list.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] print("Here are the items that have cost double the value of others.") for officeitem in officeitems[:4]:
+print(officeitem.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Here are the items that have cost double the value of others.
+Printer
+Scanner
+Fan
+Table
+>>>
+Copying
+You can create a copy of the list based on the original list. This is helpful if you have packed up customer data in a list and you want to save it elsewhere to secure it in the wake of data breaches or any other kind of cyberattack. The most common way of making a copy of the list is to create a slice with no starting or ending values. This slice instructs Python to slice the list right from the starting value to the ending value. This is how you end up creating a copy of your list.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] c_officeitems = officeitems[:]
+print("Here is the list of items that I have purchased.") print(officeitems)
+print("\nHere is the exact copy of the same items.") print(c_officeitems)  
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Here is the list of items that I have purchased.
+['printer', 'scanner', 'fan', 'table', 'table lights'] Here is the exact copy of the same items.
+['printer', 'scanner', 'fan', 'table', 'table lights']
+>>>
+Let us now check if you really have two lists and that if removing or modifying one list will affect the copied list or not.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] c_officeitems = officeitems[:] officeitems.append('computer system') c_officeitems.append('blinds')
+print("Here is the list of items that I have purchased.") print(officeitems)
+print("\nHere is the new list of office items.") print(c_officeitems)  
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Here is the list of items that I have purchased.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'computer system'] Here is the new list of office items.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'blinds']
+>>>
+You can see that the two lists exist independently and that you can modify them separately. This is helpful if you are building data lists for a big financial institution.
+You may create a copy of the list without using the slice method but you will not be able to modify the two lists independently of each other. They will not be able to exist independently of each other.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] c_officeitems = officeitems officeitems.append('computer system') c_officeitems.append('blinds')
+print("Here is the list of items that I have purchased.") print(officeitems)
+print("\nHere is the new list of office items.") print(c_officeitems)  
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Here is the list of items that I have purchased.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'computer system', 'blinds'] Here is the new list of office items.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'computer system', 'blinds']
+>>>
+You can see that each list retained both newly added items. I will now add one item to one list only and see if the copied list retains that item or not.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] c_officeitems = officeitems officeitems.append('computer system')
+print("Here is the list of items that I have purchased.") print(officeitems)
+print("\nHere is the new list of office items.") print(c_officeitems)  
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Here is the list of items that I have purchased.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'computer system'] Here is the new list of office items.
+['printer', 'scanner', 'fan', 'table', 'table lights', 'computer system']
+>>>
+So, as you can see that simply copying a list will not do the magic for you. Slicing helps you make the copy you desire for.
+Python Tuples
+While lists can be modified and are flexible, Python tuples are the opposite. Once you have created a tuple, you cannot change it. A tuple is similar to a list in the sense that you can fill it up with millions of items but at the same time, it is different from a list in the sense that you cannot add, remove or change the items in a tuple. This is helpful if you want to create a list that you do not want to be changed. The values in a tuple that cannot be changed are labeled as immutable in Python. So, you can label a rigid list or a tuple as an immutable list.
+In appearance, a tuple looks mostly like a list except that you have to enclose the tuple items inside square brackets. Once you have created a tuple, you can easily access the tuples' items by using the index number. I will add a new feature to the game by creating a list of home items that the same player needs to sell. The difference is that the player cannot change the items of the house except in exceptional circumstances. He has to sell the house the way it is at the moment. He cannot add more items or remove the existing ones to tune the house's value as per the expectations and demands of buyers.
+homeitems = ('dining table', 'cooking range', 'washing machine', 'refrigerator',
+'air conditioner') print(homeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+('dining table', 'cooking range', 'washing machine', 'refrigerator', 'air conditioner')
+>>>
+Let us see what happens when we try to change the value of an item in the tuple.
+homeitems = ('dining table', 'cooking range', 'washing machine', 'refrigerator',
+'air conditioner') homeitems[0] = ('bed') print(homeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 2, in <module> homeitems[0] = ('bed')
+TypeError: 'tuple' object does not support item assignment
+>>>
+You see an error because Python does not allow you to modify tuples. However, there is a way out by which you modify a tuple. You can do the modification by assigning new values to the same variable that carries the tuple. In the following code snippet, I will redefine the tuple.
+homeitems = ('dining table', 'cooking range', 'washing machine', 'refrigerator',
+'air conditioner')
+print("Original items in the tuple:") for homeitem in homeitems:
+print(homeitem)
+homeitems = ('chairs', 'carpets', 'plates', 'oven') print("Modified items in the tuple:") for homeitem in homeitems:
+print(homeitem)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Original items in the tuple:
+dining table cooking range washing machine refrigerator air conditioner
+Modified items in the tuple:
+chairs carpets plates oven
+>>>
+Tuples are data structures that can be used to store values that cannot be changed through a program.
+Looping
+Just like lists, you can create a loop through your tuple.
+homeitems = ('dining table', 'cooking range', 'washing machine', 'refrigerator',
+'air conditioner') for homeitem in homeitems:
+print(homeitem)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py dining table cooking range washing machine refrigerator air conditioner
