@@ -1,0 +1,158 @@
+*****Chapter Four: Python Conditionals*****
+A key part of programming is about examining a set of conditions and then taking appropriate action based on the conditions. The if statement in Python lets you test the state of a program and act on it appropriately. This chapter will walk you through the process of writing conditionals and checking them as well. The chapter will encompass simple and complex if statements. I will explain how you can pair up an if statement with lists.
+homeitems = ['dining table', 'cooking range', 'washing machine', 'refrigerator',
+'air conditioner'] for homeitem in homeitems:
+if homeitem == 'dining table':
+print(homeitem.upper())
+else:
+print(homeitem.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+DINING TABLE
+Cooking Range
+Washing Machine
+Refrigerator
+Air Conditioner
+>>>
+The simplest conditional test tends to check if a particular variable's value stands equal to your value of interest. Sometimes you need to check if a value exists in a list or not. The player in the game might want to check if a certain item has been purchased or not before he lists the office for sale.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights']
+'scanner' in officeitems
+You can use the conditional statements to check if a certain item appears in a list. You also can use the item to display a message or comment.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] item = 'scanner' item1 = 'table' item2 = 'extension cable' if item in officeitems: print(item.title() + " exists in the office.")
+if item1 in officeitems: print(item1.title() + " exists in the office.")
+if item2 not in officeitems:
+print(item2.title() + " is not exist in the office. You should buy it as soon
+as possible.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Scanner exists in the office.
+Table exists in the office.
+Extension Cable does not exist in the office. You should buy it as soon as possible.
+>>>
+Let us see what more you can do with the conditional statements. You can add the conditional statement to tell the player when the office will be ready for listing in the game.
+officeitems = 10 if officeitems >= 10:
+print("You can list the office for sale")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+You can list the office for sale
+>>>
+See the following example with an additional print statement. officeitems = 12 if officeitems >= 10:
+print("You can list the office for sale") print("Have you listed it yet.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+You can list the office for sale Have you listed it yet?
+>>>
+The if-else Statement
+The condition can be interesting if you add to it the else statement to print a statement if the count of items has not matured yet. The if-else statement allows you to test the conditions in both ways. The else statement defines an action when a particular condition fails.
+officeitems = 11 if officeitems >= 10:
+print("You can list the office for sale") print("Have you listed it yet?")
+else:
+print("Sorry, you cannot list the office for sale.")
+print("Please buy and add more items to the office and list it again for
+sale.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+You can list the office for sale Have you listed it yet?
+>>>
+As the items are more than 10, the condition has been tested passed. Now I will reduce the count of the items to test the else-statement.
+officeitems = 9 if officeitems >= 10:
+print("You can list the office for sale") print("Have you listed it yet?")
+else:
+print("Sorry, you cannot list the office for sale.")
+print("Please buy and add more items to the office and list it again for
+sale.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Sorry, you cannot list the office for sale.
+Please buy and add more items to the office and list it again for sale.
+>>>
+The if-elif-else Chain
+The elif statement allows you to add one more condition to the block of code. officeitems = 5 if officeitems < 10:
+print("You still can list the office but it will not bring you the desired
+amount of money.")   elif officeitems < 15:
+print("You can list the office for sale") print("Have you listed it yet?")
+else:
+print("Sorry, you cannot list the office for sale.")
+print("Please buy and add more items to the office and list it again for
+sale.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+You still can list the office, but it will not bring you the desired amount of money.
+>>>
+You can test multiple conditions with conditional statements. officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] if 'printer' in officeitems: print("I have purchased the printer.")
+if 'fan' in officeitems:
+print("I have purchased the fan.")
+if 'scanner' in officeitems:
+print("I have purchased the scanner.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py I have purchased the printer.
+I have purchased the fan.
+I have purchased the scanner.
+>>>
+When the player has checked if he has purchased all the desired items, the game will give him a green signal to list the office. You can add a print statement at the end of the block of code.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] if 'printer' in officeitems: print("I have purchased the printer.")
+if 'fan' in officeitems:
+print("I have purchased the fan.")
+if 'scanner' in officeitems:
+print("I have purchased the scanner.") print("\nYou can list the office now.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py I have purchased the printer.
+I have purchased the fan.
+I have purchased the scanner.
+You can list the office now.
+>>>
+The same code cannot work with an elif statement. It will stop working. See what happens when we remove the simple if statement and add an elif statement.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] if 'printer' in officeitems: print("I have purchased the printer.")
+elif 'fan' in officeitems:
+print("I have purchased the fan.")
+elif 'scanner' in officeitems:
+print("I have purchased the scanner.")
+print("\nYou can list the office now.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py I have purchased the printer.
+You can list the office now.
+>>>
+If Statements and Lists
+You can pair up if statements with lists. You can actually combine the two and do some amazing things. In the next example, I will pair up a loop with a list to make the game more interactive.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+print("I have purchased the " + officeitem + ".")
+print("\nBoss: You can list the office for sale now.") = RESTART: C:/Users/saifia computers/Desktop/sample.py I have purchased the printer.
+I have purchased the scanner.
+I have purchased the fan.
+I have purchased the table.
+I have purchased the table lights.
+Boss: You can list the office for sale now.
+>>>
+You have a straightforward result because the code contains a simple for loop. However, you can add a bit more complexity to the code. The boss may ask the employee about a certain item that must be included in the office set up before the office is put on sale. The employee has to handle the situation in the most appropriate way. I will add an if-else statement along with the for loop to make the code more flexible.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] for officeitem in officeitems:
+if officeitem == 'cupboard':
+print("Sorry Boss, I have not purchased it yet.")
+else:
+print("However, I have purchased the " + officeitem + ".")
+print("\nBoss: You can list the office for sale only after you purchase the cupboard and set it up in the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py However, I have purchased the printer.
+However, I have purchased the scanner.
+However, I have purchased the fan.
+However, I have purchased the table.
+However, I have purchased the table lights.
+Boss: You can list the office for sale only after purchasing the cupboard and setting it up in the office.
+>>>
+Now, the Python interpreter checks each office item before it displays the message. The code confirms if the boss has asked for the cupboard. When he asks for the item, he gets a different response from the employee. The else block makes sure that the response is in affirmative for all the other items.
+Multiple Lists
+Up till now, we have worked with a single list. In this code sample, I will work on multiple lists. I will add a list of optional items that may or may not be purchased. However, purchasing these items will help increase the value of the office.
+officeitems = ['printer', 'scanner', 'fan', 'table', 'table lights'] optionalitems = ['pen', 'paper', 'drafting pads', 'books', 'water dispenser'] for optionalitem in optionalitems:
+if optionalitem in officeitems:
+print("The office has been set up will all the essential and optional
+items.") else:
+print("Sorry, I have not purchased the " + optionalitem + ".")
+print("\nBoss: You can list the office for sale only after you purchase the optional items and set them up in the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Sorry, I have not purchased the pen.
+Sorry, I have not purchased the paper.
+Sorry, I have not purchased the drafting pads.
+Sorry, I have not purchased the books.
+Sorry, I have not purchased the water dispenser.
+Boss: You can list the office for sale only after purchasing the optional items and setting them up in the office.
+>>>
+I defined the list of office items and optional items. I created a loop through the optional items to check if they also are added to the office or not. Upon the checking of each item, a message is displayed. In the end, the boss gives his verdict on whether to list the office or not. In the code mentioned above, the office does not contain any item from the list of optional items, therefore it displayed the same message. You can change that by including one or two optional items in the list of office items. See the following code.
+officeitems = ['printer', 'paper', 'drafting pads', 'scanner', 'fan', 'table', 'table lights']
+optionalitems = ['pen', 'paper', 'drafting pads', 'books', 'water dispenser'] for optionalitem in optionalitems:
+if optionalitem in officeitems:
+print("I have purchased the " + optionalitem + ".")
+else:
+print("Sorry, I have not purchased the " + optionalitem + ".")
+print("\nBoss: You can list the office for sale only after you purchase all the optional items and set them up in the office.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Sorry, I have not purchased the pen.
+I have purchased the paper.
+I have purchased the drafting pads.
+Sorry, I have not purchased the books.
+Sorry, I have not purchased the water dispenser.
+Boss: You can list the office for sale only after purchasing all the optional items and setting them up in the office.
+>>> 
