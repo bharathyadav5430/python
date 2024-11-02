@@ -1,0 +1,190 @@
+*****Chapter Five: Python Dictionaries*****
+This chapter will walk you through the concept of Python dictionaries, which are the most important part of Python coding. You can store information in a dictionary in the form of pairs. You can easily access the information, modify it, and delete it at will. Dictionaries are amazing in the sense that they allow you to store unlimited information. Just like lists, I will explain how you can pair up a dictionary with a loop.
+When you have a good grasp of Python dictionaries, you will learn how to model an object with a dictionary's help. Creating a dictionary is simple, but updating it and using it in a code can be tricky. I will move through this chapter step by step. In the first code sample, I will create a simple dictionary.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'} print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner': 'hybrid', 'table':
+'wood', 'table lights': 'LED'}
+>>>
+There is another way to access and display selected information from a dictionary. You can use one of the pairs' values and use them to access the other value of the pair. See the following code example.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'} print(officeitems['printer']) print(officeitems['paper']) print(officeitems['table lights']) print(officeitems['table']) print(officeitems['drafting pads'])
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+HP
+A4 LED wood blank
+>>>
+Dictionaries are more complex than lists, therefore you need more programming practice to handle them. You can see that a dictionary contains key-value pairs where each key is automatically connected to its value. Each key's value can be a string or an integer or even a list in some cases. It also can be a dictionary in a more complex code form. You have to wrap up a dictionary in curly braces or the dictionary will display an error. A key has directed association with its value.
+Accessing values from a dictionary is easy. As you have seen in the above code sample, I tried to access each value with the help of a key or a dictionary. Dictionaries are also very dynamic, and they allow you to add as many key-value pairs to the dictionary as you desire. I will now take an empty dictionary and fill it up with key-value pairs of my choice.
+officeitems = {} officeitems['printer'] = 'HP' officeitems['paper'] = 'A4' officeitems['drafting pads'] = 'blank' officeitems['scanner'] = 'hybrid' officeitems['table lights'] = 'LED' print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner': 'hybrid', 'table lights': 'LED'}
+>>>
+You also can modify the value of a key as you deem fit. In order to do that, you have to mention the name of the dictionary and write the key in square brackets. Then you have to write the new value for the same key.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'}
+print("I have purchased a printer by " + officeitems['printer'] + ".") officeitems['printer'] = 'dell'
+print("However, I have also purchased one more now by " + officeitems['printer'] + ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py I have purchased a printer by HP.
+However, I have also purchased one more now by dell.
+>>>
+Removing Pairs
+When you don’t need a certain key-value pair, you can remove it easily. You can apply the del statement to remove the key-value pair. All you have to do is to mention the name of your dictionary and key. I will remove different items from the dictionary I have created earlier on.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'} print(officeitems) del officeitems['printer'] print(officeitems) del officeitems['paper'] print(officeitems) del officeitems['drafting pads'] print(officeitems) del officeitems['scanner']
+print(officeitems) del officeitems['table'] print(officeitems) del officeitems['table lights'] print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner': 'hybrid', 'table': 'wood', 'table lights': 'LED'}
+{'paper': 'A4', 'drafting pads': 'blank', 'scanner': 'hybrid', 'table': 'wood', 'table lights': 'LED'}
+{'drafting pads': 'blank', 'scanner': 'hybrid', 'table': 'wood', 'table lights': 'LED'}
+{'scanner': 'hybrid', 'table': 'wood', 'table lights': 'LED'}
+{'table': 'wood', 'table lights': 'LED'}
+{'table lights': 'LED'}
+{}
+>>>
+You can see that when all the pairs are removed, the result is an empty dictionary. One important thing to keep in mind is that the del statement removes a pair completely from the dictionary. Therefore, only use the del statement when you are sure that you do not need a certain key-value pair.
+A dictionary allows you to use the values in a print statement to display certain messages.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'}
+print("I bought a printer by " + officeitems['printer'] + ".") print("I also bought a scanner by " + officeitems['scanner'] + ".") print("The paper if of the size " + officeitems['paper'] + ".") print("The drafting pads are " + officeitems['drafting pads'] + ".") = RESTART: C:/Users/saifia computers/Desktop/sample.py I bought a printer by HP.
+I also bought a scanner by hybrid.
+The paper if of the size A4.
+The drafting pads are blank.
+>>>
+I have used the print keyword in the code. Then I added the appropriate statement to the code. After that came the part of the concatenation operator. This is how you can use the values of a dictionary to display messages in your code.
+Looping
+Just like we formed a loop through a list, we can form the same through a dictionary as well. A Python dictionary may contain a few millions of keyvalue pairs. As a dictionary carries big amounts of data, Python allows you to create a loop through it to easily see each key-value pair and use it in a program. In the first example, I will loop through each item in your dictionary.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'} for key, value in officeitems.items():
+print("\nThe Key: " + key) print("The Value: " + value)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+The Key: printer
+The Value: HP
+The Key: paper
+The Value: A4
+The Key: drafting pads
+The Value: blank
+The Key: scanner
+The Value: hybrid
+The Key: table
+The Value: wood
+The Key: table lights
+The Value: LED
+>>>
+There is another method to display the values of each key-value pair. See the following example.
+officeitems = {'printer' : 'HP', 'paper': 'A4', 'drafting pads': 'blank', 'scanner':
+'hybrid', 'table': 'wood', 'table lights': 'LED'} for k, v in officeitems.items(): print("\nThe Key: " + k) print("The Value: " + v)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+The Key: printer
+The Value: HP
+The Key: paper
+The Value: A4
+The Key: drafting pads
+The Value: blank
+The Key: scanner
+The Value: hybrid
+The Key: table
+The Value: wood
+The Key: table lights
+The Value: LED
+>>>
+One important thing to consider before moving on is the order in which Python stores the key-value pairs. When you create and run a loop through a dictionary, Python does not care about the order in which you had created the dictionary. It only tracks down the keys and their respective values.
+officeitems = {'printer' : 'Produced by HP', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'scanner': 'it is hybrid', 'table': 'made of wood', 'table lights': 'They are LED'} for items, features in officeitems.items():
+print(items.title() + " carries the following feature: " + features.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Printer carries the following feature: Produced By Hp
+Paper carries the following feature: A4 Type
+Drafting Pads carries the following feature: It Is Blank
+Scanner carries the following feature: It Is Hybrid
+Table carries the following feature: Made Of Wood
+Table Lights carries the following feature: They Are Led
+>>>
+The code instructs Python to loop through the key-value pairs inside of the dictionary. As the code loops through each pair, Python first stores each key inside the variable named items. It stores each value inside the variable named features. The same variables are then added to the print statement that runs and displays related messages.
+You can opt for looping through all the keys or values separately. For example, sometimes you need to work just with the keys and only want to display them. There is a way out. See the following example.
+officeitems = {'printer' : 'Produced by HP', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'scanner': 'it is hybrid', 'table': 'made of wood', 'table lights': 'They are LED'}
+for items in officeitems.keys():
+print(items.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Printer
+Paper
+Drafting Pads
+Scanner
+Table
+Table Lights
+>>>
+Now I will form a loop through each key's values and display the result in the interpreter.
+officeitems = {'printer' : 'Produced by HP', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'scanner': 'it is hybrid', 'table': 'made of wood', 'table lights': 'They are LED'} for items in officeitems.values():
+print(items.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Produced By Hp
+A4 Type
+It Is Blank
+It Is Hybrid
+Made Of Wood
+They Are Led
+>>>
+The sorted() Method
+To make your loops more interesting, you can add to them the sorted() method. A dictionary is not in order, therefore you need to bring it up in the order you want it to be. You can use the sorted() method to make that happen.
+officeitems = {'printer' : 'Produced by HP', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'scanner': 'it is hybrid', 'table': 'made of wood', 'table lights': 'They are LED'} for items in sorted(officeitems.keys()):
+print(items.title() + " has been purchased at a discount price. I hope it will
+help earn a handsome amount from the sale of the office")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Drafting Pads has been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+Paper has been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+Printer has been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+Scanner has been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+Table has been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+Table Lights have been purchased at a discount price. I hope it will help earn a handsome amount from the sale of the office
+>>>
+You can see that the result is in perfect alphabetical order.
+Nesting
+Ever wondered if you can make a dictionary more complex than it already is. You can nest a long dictionary inside another dictionary. The process is dubbed as nesting. You also can nest more than one dictionaries in a list. You can diversify the process of nesting by several methods.
+I am going to pack up multiple dictionaries inside a list. Coming to the back, I will create three different dictionaries about different items of an office and then cram them all inside a list.
+officeitem1 = {'printer' : 'Produced by HP', 'scanner': 'it is hybrid', 'laptop':
+'dell'}
+officeitem2 = {'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker'} officeitem3 = {'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+officeitems = [officeitem1, officeitem2, officeitem3] for officeitem in officeitems: print(officeitem)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell'}
+{'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker'}
+{'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+>>>
+The three dictionaries denote each section of the office items. One deals with IT set up, the second denotes stationary while the third section denotes office furniture.
+Random Dictionary Methods
+Dictionaries are flexible in the sense that they allow you to do several things. For example, you can check if a certain key exists in the dictionary or not. I will use the if statement in the code.
+officeitem1 = {'printer' : 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table':
+'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'} if "scanner" in officeitem1:
+print("Yes, I have got 'scanner' in the office.")
+else:
+print("Sorry, I do not have that item.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Yes, I have got 'scanner' in the office.
+>>>
+There is another method known as the clear() method that will empty your dictionary. See the following code sample.
+officeitem1 = {'printer' : 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table':
+'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'} print(officeitem1) officeitem1.clear() print(officeitem1)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+{}
+>>>
+You can see that the clear method has emptied the dictionary. Python allows you to create perfect copies of your dictionary. You can create as many copies as you want to. The method is dubbed as the copy() method. It is a built-in Python method.
+officeitem1 = {'printer' : 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table':
+'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'} print(officeitem1)
+officeitem2 = officeitem1.copy() print(officeitem2)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+>>>
+There is another built-in method to create copy of the dictionary. The method is labeled as the dict() method.
+officeitem1 = {'printer' : 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table':
+'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'} print(officeitem1) officeitem2 = dict(officeitem1) print(officeitem2)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'drafting pads': 'It is blank', 'pen': 'parker', 'table': 'made of wood', 'table lights': 'They are LED', 'office chair': 'boss'}
+>>>
+We had the exact copy of the same dictionary. There is a bit of difference in writing the code.
+If you have to create a dictionary from scratch, you can use the dict() constructor to do that. I will take an empty dictionary and fill it in with the keys and values by using the dict() constructor.
+officeitem1 = dict(printer = 'Produced by HP', scanner = 'it is hybrid', laptop = 'dell', paper = 'A4 type', draftingpads = 'blank', pen = 'parker', table = 'made of wood') print(officeitem1)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'printer': 'Produced by HP', 'scanner': 'it is hybrid', 'laptop': 'dell', 'paper': 'A4 type', 'draftingpads': 'blank', 'pen': 'parker', 'table': 'made of wood'}
+>>>
+The keys should not contain any spaces while you are constructing a dictionary by the dict() constructor. Please take a look at how I wrote drafting pads. If you leave any spaces between the keys, Python interpreter will return syntax error.    
