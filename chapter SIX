@@ -1,0 +1,335 @@
+*****Chapter Six: Input and Python Loops*****
+Programs are written to solve different problems. Some programs are made to collect information from users. These programs demand special functions that could collect the information and process it to the system's database. When you put your office on sale, you can introduce a special function that invites the buyers' quotations. The user input program will take the input, analyze it, and respond to the user.
+In this chapter, I’ll explain how you can build a program that accepts user input and processes it. I will use the input() function to develop the program. The user input and while loop will be explained together as it is the while loop that keeps the program running. The while loop runs the program as long as a particular condition stands true.
+The input() Function
+It is an interesting function and very helpful in program building. The function pauses your program and allows the user to fill in the program with the requisite information. Once the function receives the information, it forwards it to a variable for storage purposes.
+pgm = input("This program repeats whatever you write: ") print(pgm)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+This program repeats whatever you write: I am learning Python and I am enjoying it well.
+I am learning Python and I am enjoying it well.
+>>>
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+This program repeats whatever you write: Do you know Python can be used to educate robots.
+Do you know Python can be used to educate robots.
+>>>
+I entered some statements which the program repeats as they are. The important point is that you have to rerun the program once it has repeated one statement. When you run the program, it pauses and waits for the user to write something. Once the program senses input, it waits for the user to press Enter. After that, it displays the results. I will create a program that asks users to enter the bidding price to buy the office that has already been set up by the player in your game.
+pgm = input("Please enter the bidding price at which you want to buy the office: ")
+print("I want to buy the office at " + pgm + " million dollars.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Please enter the bidding price at which you want to buy the office: five I want to buy the office for five million dollars.
+>>>
+The program is suitable only if the user enters the value in the form of string. Therefore you will have to leave a note, instructing the user to write only in words. However, there is a way out to solve this problem. You can allow users to enter the price in numbers without causing an error.
+pgm = input("Please enter the bidding price at which you want to buy the office: ")
+print("I want to buy the office at " + str(pgm) + " million dollars.") = RESTART: C:/Users/saifia computers/Desktop/sample.py Please enter the bidding price at which you want to buy the office: 5 I want to buy the office for 5 million dollars.
+>>>
+In the next sample, I will create a program that has more than lines.
+pgm = input("If you are interested in buying the office, please proceed to fill in the price box. ") pgm += "\nPlease enter the bidding price at which you want to buy the office. "
+username = input(pgm)
+print("I want to buy the office for " + username + " million dollars.")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+If you are interested in buying the office, please proceed to fill in the price box.
+Please enter the bidding price at which you want to buy the office. 3 I want to buy the office for 3 million dollars.
+>>>
+This is how you can easily build a multiline string in the user input function.
+While Loops
+This section will shed light on how you can create and use Python while loops. You have already encountered the for loop which runs through a list of items and applies the code to each item in the list. The while loop is a bit different. It runs through a set of items as long as a certain condition stands true. While loop is interesting in the sense that you can use it to execute different interesting mathematical functions. The simplest and the most interesting thing is counting the numbers.
+my_number = 1 while my_number <= 15: print(my_number) my_number += 1
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+>>>
+See another mathematical example of the use of a while loop.
+my_number = 1 while my_number <= 100: print(my_number) my_number += 5
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+1
+6
+11
+16
+21
+26
+31
+36
+41
+46
+51
+56
+61
+66
+71
+76
+81
+86
+91
+96
+>>>
+I set the value to numbers 1 and 5, respectively. The while loop reads it and keeps running until it reaches 15 and 100, respectively. The code guides the loop to calculate the numbers and display the result on the interpreter. The loops get repeated as long as its condition remains true. Your player needs a while loop to exit the game. Only a while loop helps you end a game and shutdown it properly. Otherwise, it will hang the system each time you try to shut it down.
+This demands that you let the users quit the game when they want to. I will not pack up the program in a while loop and then define the quit value for the same so that users can exit it by entering the quit value. pgm = input("This program repeats whatever you tell it: ") pgm += "\nYou have to enter 'q' to exit the program. " msg = "" while msg != 'q':
+msg = input(pgm) print(msg)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+This program repeats whatever you tell it: I am determined to learn Python in six months.
+I am determined to learn Python in six months.
+You have to enter 'q' to exit the program. I am determined to build my programs in the first month of learning.
+I am determined to build my programs in the first month of learning.
+I am determined to learn Python in six months. You have to enter 'q' to exit the program. q q
+>>>
+I defined the prompt namely pgm in the first line of code. It gives the user two options; one to enter a message and another to quit the program. I also set a variable that stored the information the user enters. The while loop runs until the user enters q and breaks the loop. It can run a million times on end if the user does not end it.
+pgm = input("This program repeats whatever you tell it: ") pgm += "\nYou have to enter 'q' to exit the program. " msg = "" while msg != 'q':
+msg = input(pgm) print(msg)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py This program repeats whatever you tell it: hi hi
+You have to enter 'q' to exit the program. how are you how are you hi
+You have to enter 'q' to exit the program. What is your name?
+What is your name?
+hi
+You have to enter 'q' to exit the program. Are you fine?
+Are you fine?
+hi
+You have to enter 'q' to exit the program. I am looking forward to doing business with you.
+I am looking forward to doing business with you. hi
+You have to enter 'q' to exit the program. q q
+>>>
+You can see that the while loop ran until I entered the keyword q that broke the loop. The program is perfect except for the fact that it displays q as an actual message. If I add an if clause to the code, it will work just fine.
+pgm = input("This program repeats whatever you tell it: ") pgm += "\nYou have to enter 'q' to exit the program. " msg = "" while msg != 'q': msg = input(pgm) if msg != 'q':
+print(msg)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+This program repeats whatever you tell it: Hi
+Hi
+You have to enter 'q' to exit the program. My name is Jack.
+My name is Jack.
+Hi
+You have to enter 'q' to exit the program. I am here to do business with you.
+I am here to do business with you.
+Hi
+You have to enter 'q' to exit the program. I want to sell an office to the highest bidder. Have a look at the pictures.
+I want to sell an office to the highest bidder. Have a look at the pictures. Hi
+You have to enter 'q' to exit the program. I think you are not interested. Thank you!
+I think you are not interested. Thank you!
+Hi
+You have to enter 'q' to exit the program. q
+>>>
+The program did not display the word q as a message. It simply lets the user exit the program.
+The Break Keyword
+If you want to exit the loop without running the code that remains, you can add a break statement to the program. The break statement tends to redirect the flow of a program and allow you to execute the code of your choice.
+pgm = input("Please enter the name of the office item that you have purchased:")
+pgm += "\n(You have to enter 'q' to exit the program.) " while True:
+item = input(pgm) if item == 'q': break else:
+print("I have purchased the " + item.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Please enter the name of the office item that you have purchased:table table
+(You have to enter 'q' to exit the program.) I have purchased the table
+(You have to enter 'q' to exit the program.) laptop I have purchased the Laptop table
+(You have to enter 'q' to exit the program.) computer system I have purchased the Computer System table
+(You have to enter 'q' to exit the program.) stack of paper.
+I have purchased the Stack Of Paper. table
+(You have to enter 'q' to exit the program.) air conditioner I have purchased the Air Conditioner table
+(You have to enter 'q' to exit the program.) q
+>>>
+You have another choice as well. Instead of breaking out of the loop, you can integrate into the block of code a continue statement that will take the code back to the start after the condition stands tested. See the following mathematical example.
+num = 0 while num < 40: num += 1 if num %4 == 0:
+continue
+print(num)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+1
+2
+3
+5
+6
+7
+9
+10
+11
+13
+14
+15
+17
+18
+19
+21
+22
+23
+25
+26
+27
+29
+30
+31
+33
+34
+35
+37
+38
+39
+>>>
+You can see that the continue statement returned the code after a pause at the point Python tested the condition. The num started at 0. I kept the figure under 40 so the loop ran until 4, checked if the current number is divisible by 4 and then executed the rest of the code because the number was not divisible by 4. Let us try another example to clear the concept fully.
+num = 4 while num < 80: num += 3 if num %4 == 0:
+continue
+print(num)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+7
+10
+13
+19
+22
+25
+31
+34
+37
+43
+46
+49
+55
+58
+61
+67
+70
+73
+79
+82
+>>>
+Loops, Lists, Dictionaries
+The three go side by side. I have already given some code snippets that showed what a while loop could be used for. I will give a comprehensive overview of how you can pair up loops, lists, and dictionaries. The examples will be a bit more complex than the previous examples.
+items_tobuy = ['printer', 'scanner', 'laptop', 'paper', 'drafting pads', 'pen', 'table',
+'table lights', 'office chair'] items_bought = [] while items_tobuy: officeitems = items_tobuy.pop() print("I am purchasing the " + officeitems.title()) items_bought.append(officeitems) print("\nI have purchased the following items:") for item_bought in items_bought:
+print(item_bought.title())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I am purchasing the Office Chair
+I have purchased the following items:
+Office Chair
+I am purchasing the Table Lights
+I have purchased the following items:
+Office Chair
+Table Lights
+I am purchasing the Table
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+I am purchasing the Pen
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+I am purchasing the Drafting Pads
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+Drafting Pads I am purchasing the Paper
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+Drafting Pads
+Paper
+I am purchasing the Laptop
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+Drafting Pads
+Paper
+Laptop
+I am purchasing the Scanner
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+Drafting Pads
+Paper
+Laptop
+Scanner
+I am purchasing the Printer
+I have purchased the following items:
+Office Chair
+Table Lights
+Table
+Pen
+Drafting Pads
+Paper
+Laptop
+Scanner
+Printer
+>>>
+When a player purchases an item, he will get a clear message that an item has been bought and added to the office. So, this has definitely made the game more interesting.
+While loop can also help you in removing multiple instances of a particular value. If an item's value is being repeated in the list, you can set up a while loop to remove all instances of the same. For a small list, manually removing it is not a problem. However, this feature of the while loops becomes a must when you are dealing with long lists.
+officeitems = ['printer', 'scanner', 'laptop', 'paper', 'drafting pads', 'scanner', 'pen', 'table', 'scanner', 'table lights', 'office chair'] print(officeitems) while 'scanner' in officeitems:
+officeitems.remove('scanner')
+print(officeitems)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+['printer', 'scanner', 'laptop', 'paper', 'drafting pads', 'scanner', 'pen', 'table', 'scanner', 'table lights', 'office chair']
+['printer', 'laptop', 'paper', 'drafting pads', 'pen', 'table', 'table lights', 'office chair']
+>>>
+In the next example, I will build a dictionary with the user input with a while loop. I will create a program that will ask the user to tell about the office items he wants to buy and the brand name. The input will be forwarded to a dictionary and used to create the desired output for the user. The program will display purchase statistics in a neat and summarized way.
+officeitems = {} buying = True while buying:
+buyer_item = input("\nWhat do want to buy? ") officeitem = input("Of what brand do you want to buy? ") officeitems[buyer_item] = officeitem
+repeat = input("Would you like to buy another item for the office? (yes/
+no ") if repeat == 'no':
+buying = False
+print("\nPurchase Statistics") for buyer_item, officeitem in officeitems.items(): print("I have purchased " + buyer_item + " from the brand " + officeitem
++ ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+What do you want to buy? table
+Of what brand do you want to buy? interwood
+Would you like to buy another item for the office? (yes/ noyes What do you want to buy?
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+What do you want to buy? table
+Of what brand do you want to buy? interwood
+Would you like to buy another item for the office? (yes/ no yes
+What do you want to buy? air conditioner
+Of what brand do you want to buy? orient
+Would you like to buy another item for the office? (yes/ no yes
+What do you want to buy? laptop
+Of what brand do you want to buy? dell
+Would you like to buy another item for the office? (yes/ no yes
+What do you want to buy? office chair
+Of what brand do you want to buy? boss
+Would you like to buy another item for the office? (yes/ no no
+Purchase Statistics
+I have purchased a table from the brand interwood.
+I have purchased an air conditioner from the brand orient.
+I have purchased a laptop from the brand dell.
+I have purchased an office chair from the brand boss.
+>>>
+The same program can be redesigned to collect names and email IDs of users who visit your eCommerce website. You can then use the information to send your prospects direct mail ads and boost your business. All you need is a bit of tweaking to the existing code and your program will be ready to boost your marketing campaign.
+users_id = {} info = True while info:
+user_name = input("\nWhat is your name? ") user_id = input("what is your email id? ") users_id[user_name] = user_id
+repeat = input("Would you like to add another username or id? (yes/ no ") if repeat == 'no':
+info = False
+print("\nUser Info") for user_name, user_id in users_id.items():
+print("My name is " + user_name + " and my email ID is " + user_id +
+".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py What is your name? johnson what is your email id? johnson@gmail.com
+Would you like to add another username or id? (yes/ no yes What is your name? emily
+what is your email id? emily@yahoo.com
+Would you like to add another username or id? (yes/ no yes What is your name? emilia
+what is your email id? emilia@outlook.com
+Would you like to add another username or id? (yes/ no yes
+What is your name? mark
+what is your email id? mark@rocketmail.com
+Would you like to add another username or id? (yes/ no yes What is your name? jasmine what is your email id? jasmine@gmail.com
+Would you like to add another username or id? (yes/ no
+User Info
+My name is johnson and my email ID is johnson@gmail.com.
+My name is emily and my email ID is emily@yahoo.com.
+My name is emilia and my email ID is emilia@outlook.com.
+My name is mark and my email ID is mark@rocketmail.com.
+My name is jasmine and my email ID is jasmine@gmail.com.
+>>>
+You can see how easy it is to build a program with a while loop and user input function to collect crucial prospect data that can ultimately help you shape your marketing campaign. You can give this program a brilliant interface and run it as part of your landing page design. As I have defined an empty dictionary at the start, you can fill it with as much information as you want to. It can carry over a million items.
