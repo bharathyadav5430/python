@@ -1,0 +1,283 @@
+Chapter Seven: Python Functions
+This chapter will walk you through the process of writing functions. Functions can be defined as blocks of code that have just one job to perform. When you want to do a simple task that you have defined in your function, you can just call the function you have written to do the job. If you are looking forward to performing the same task more than once throughout the program, you can just make a call to the same function and Python will execute the entire block of code. Functions make your programs simple and easy to write and run.
+In this chapter, I will explain how you can create functions, pass crucial information to the same, and repeat multiple times the task that functions perform. I will also explain how you can store a function in the form of modules.
+Defining Functions
+Defining a function is a simple job. The keyword I will use is called def. The keyword will be followed by the name of the function and parenthesis. Parenthesis is a function that is very important as it can be used for different purposes, like adding default information and passing information to functions at a later stage of writing a program. def user_info():
+print("My name is Joe and I am a new user.")
+user_info()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+>>>
+In the first line of code, I have defined the function. The second line carries the usual print statement while the last line is where I made a function call to display the function's information. This can be dubbed as the simplest structure of a function. The def keyword defines the function.
+From this point, I will make it a bit complex by passing information to the function. I will have to modify it a little bit to suit our needs. The parenthesis now will no longer be empty. I will fill them up with some information. def user_info(username):
+print("My name is " + username.title() + " and I am a new user.")
+user_info('Joe') user_info('Jimmy') user_info('Emily') user_info('Emilia') user_info('Mark')
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+My name is Jimmy and I am a new user.
+My name is Emily and I am a new user.
+My name is Emilia and I am a new user.
+My name is Mark and I am a new user.
+>>>
+The most important point to note here is that functions help you cut short the block of code. You do not have to rewrite a block of code again and again to do the same job. All you need is to call the function and use the parenthesis to use new information for the same block of code. Programmers love functions because they save their time and energy when they write lengthy programs.
+Arguments and Parameters
+I have packed up the variable inside the parenthesis and named it as the username; this is labeled as a parameter. The values Joe and Emily that I have put in the parenthesis function are known as arguments. Arguments and parentheses are often confused with each other. People use them interchangeably. That is not the right thing to do.
+There can be multiple arguments for a function; you can pass them to the function in many ways and put them in a position. They are called positional arguments and they are also known as keyword arguments. Each argument may include the name of a variable, a list, or a dictionary.
+Positional Arguments
+When you make a function call, Python ought to watch the arguments with a specific parameter in the definition of a function. The matching of values are dubbed as positional arguments.
+def user_info(username, email_id):
+print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info('Joe', 'joe@gmail.com') user_info('Jimmy', 'jimmy@outlook.com') user_info('Emily', 'emily@gmail.com') user_info('Emilia', 'emilia@yahoo.com') user_info('Mark', 'mark@outlook.com')
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+My email ID is Joe@Gmail.Com.
+My name is Jimmy and I am a new user.
+My email ID is Jimmy@Outlook.Com.
+My name is Emily and I am a new user.
+My email ID is Emily@Gmail.Com.
+My name is Emilia and I am a new user.
+My email ID is Emilia@Yahoo.Com.
+My name is Mark and I am a new user.
+My email ID is Mark@Outlook.Com.
+>>>
+The output neatly displays the name of the user and his or her email ID. In the above code sample, I have called the function more than once. Multiple function calls are the most efficient way to do a job. As soon as a new user fills in the information and you make a function call, the entire block of code will run and execute the information. There is virtually no limit to the number of function calls. One important thing to keep in mind while making a function call is to remember the position of arguments. If you change the position, you are likely to get funny results.
+def user_info(username, email_id):
+print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info('joe@gmail.com', 'Joe') user_info('jimmy@outlook.com', 'Jimmy' ) user_info('emily@gmail.com', 'Emily') user_info('Emilia', 'emilia@yahoo.com') user_info('Mark', 'mark@outlook.com')
+>>>= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe@Gmail.Com and I am a new user.
+My email ID is Joe.
+My name is Jimmy@Outlook.Com and I am a new user.
+My email ID is Jimmy.
+My name is Emily@Gmail.Com and I am a new user.
+My email ID is Emily.
+My name is Emilia and I am a new user.
+My email ID is Emilia@Yahoo.Com.
+My name is Mark and I am a new user.
+My email ID is Mark@Outlook.Com.
+>>>
+I have changed the position for the first three function calls and the results are ridiculous.
+Keyword Arguments
+There is another way out. You can use keyword arguments to avoid this kind of mix up. A keyword argument is like a name-value pair that is passed to a function. A keyword argument allows you to create a link between the name and the value inside an argument. When you pass the argument to the function, Python cannot mistake it. It eliminates the confusion and you do not have to worry about bringing your arguments in order.
+def user_info(username, email_id):
+print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info(email_id = 'joe@gmail.com', username = 'Joe') user_info( email_id = 'jimmy@outlook.com', username = 'Jimmy' ) user_info( email_id = 'emily@gmail.com', username = 'Emily') user_info(username = 'Emilia', email_id = 'emilia@yahoo.com') user_info(username = 'Mark', email_id = 'mark@outlook.com')
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+My email ID is Joe@Gmail.Com.
+My name is Jimmy and I am a new user.
+My email ID is Jimmy@Outlook.Com.
+My name is Emily and I am a new user.
+My email ID is Emily@Gmail.Com.
+My name is Emilia and I am a new user.
+My email ID is Emilia@Yahoo.Com.
+My name is Mark and I am a new user.
+My email ID is Mark@Outlook.Com.
+>>>
+I have changed the positions of the arguments and it hardly affected the results. Keyword arguments help you create a functional program.
+Default Values
+When you are writing a program, you may come up with information that you have to use repeatedly. This means that you will have to fill in the function call with the required arguments each you need that information to be executed. This may result in a waste of time and energy, and may also cause frustration. If you create default values for the function, you will be able to execute the excessively used information fast and efficiently. When you leave the function call empty, it will use the default arguments. You can use the default information as many times as you want to. The default values tend to simply a program and declutter the code. I will fill in the same example with the default arguments and also use the default values multiple times.
+def user_info(username = 'Dora', email_id = 'dora@outlook.com'): print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info(email_id = 'joe@gmail.com', username = 'Joe') user_info()
+user_info( email_id = 'jimmy@outlook.com', username = 'Jimmy' ) user_info()
+user_info( email_id = 'emily@gmail.com', username = 'Emily') user_info(username = 'Emilia', email_id = 'emilia@yahoo.com') user_info(username = 'Mark', email_id = 'mark@outlook.com') user_info()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+My email ID is Joe@Gmail.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+My name is Jimmy and I am a new user.
+My email ID is Jimmy@Outlook.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+My name is Emily and I am a new user.
+My email ID is Emily@Gmail.Com.
+My name is Emilia and I am a new user.
+My email ID is Emilia@Yahoo.Com.
+My name is Mark and I am a new user.
+My email ID is Mark@Outlook.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+>>>
+You can use the keyword arguments, the positional arguments and the default values at the same time.
+def user_info(username = 'Dora', email_id = 'dora@outlook.com'): print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info(email_id = 'joe@gmail.com', username = 'Joe') user_info()
+user_info( username = 'Jimmy' ) user_info()
+user_info( email_id = 'emily@gmail.com', username = 'Emily') user_info('Emilia', email_id = 'emilia@yahoo.com') user_info('Mark', 'mark@outlook.com') user_info()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My name is Joe and I am a new user.
+My email ID is Joe@Gmail.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+My name is Jimmy and I am a new user.
+My email ID is Dora@Outlook.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+My name is Emily and I am a new user.
+My email ID is Emily@Gmail.Com.
+My name is Emilia and I am a new user.
+My email ID is Emilia@Yahoo.Com.
+My name is Mark and I am a new user.
+My email ID is Mark@Outlook.Com.
+My name is Dora and I am a new user.
+My email ID is Dora@Outlook.Com.
+>>>
+The most important thing to note in the code mentioned above is that in one function call when I missed out on writing the email ID, the program picked it up from the default values and ran it. If you leave one argument in the function call but have a default argument in place, you will have it covered by the default values.
+You may run an error if you fail to fill in the function call with the arguments.
+def user_info(username, email_id ):
+print("My name is " + username.title() + " and I am a new user.") print("My email ID is " + email_id.title() + ".")
+user_info()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 6, in <module> user_info()
+TypeError: user_info() missing 2 required positional arguments: 'username' and 'email_id'
+>>>
+Returning Values
+A function does not have to display the output in a direct form. You can make the function process a bunch of data and return the value in an indirect form. The return statement picks up a value from the function and forwards it to the line that made a function call.
+def user_info(username, email_id ):
+info = "My name is " + username.title() + " and I am a new user, and my
+email ID is " + email_id.title() + "." return info.title()
+newuser = user_info('Dora', 'dora@gmail.com') print(newuser)
+newuser1 = user_info('John', 'john@gmail.com') print(newuser1)
+newuser2 = user_info('Jimmy', 'jimmy@gmail.com') print(newuser2)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+My Name Is Dora And I Am A New User, And My Email Id Is Dora@Gmail.Com.
+My Name Is John And I Am A New User, And My Email Id Is John@Gmail.Com.
+My Name Is Jimmy And I Am A New User, And My Email Id Is Jimmy@Gmail.Com.
+>>>
+In the next code sample, I will add another argument to the code. I will also experiment on making an argument optional so that the users who do not want to fill in a value, can leave it without running an error in the program. def user_info(username, email_id, gender ):
+info = "My name is " + username.title() + " and I am a new user, and my
+email ID is " + email_id.title() + ". My gender is " + gender.title() + "." return info.title()
+newuser = user_info('Dora', 'dora@gmail.com', 'female') print(newuser)
+newuser1 = user_info('John', 'john@gmail.com', 'male') print(newuser1)
+newuser2 = user_info('Jimmy', 'jimmy@gmail.com', 'male') print(newuser2)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+My Name Is Dora And I Am A New User, And My Email Id Is Dora@Gmail.Com. My Gender Is Female.
+My Name Is John And I Am A New User, And My Email Id Is John@Gmail.Com. My Gender Is Male.
+My Name Is Jimmy And I Am A New User, And My Email Id Is Jimmy@Gmail.Com. My Gender Is Male.
+>>>
+Suppose someone wants to leave the email option aside. You can add a conditional statement to the existing code to allow users to make a choice at will.
+def user_info(username, gender, email_id='' ):
+if email_id:
+info = "My name is " + username.title() + " and I am a new user, and
+my email ID is " + email_id.title() + ". My gender is " + gender.title() + "." else:
+info = "My name is " + username.title() + " and my gender is " +
+gender.title() + "." return info.title()
+newuser = user_info('Dora', 'female') print(newuser)
+newuser1 = user_info('John', 'john@gmail.com', 'male') print(newuser1)
+newuser2 = user_info('Jimmy', 'jimmy@gmail.com', 'male') print(newuser2)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py My Name Is Dora And My Gender Is Female.
+My Name Is John And I Am A New User, And My Email Id Is Male. My Gender Is John@Gmail.Com.
+My Name Is Jimmy And I Am A New User, And My Email Id Is Male. My Gender Is Jimmy@Gmail.Com.
+>>>
+Function and Dictionary
+You can pair up a dictionary with a function. Take the example of the following function.
+def user_info(username, gender, email_id):
+user = {'uname': username, 'gender': gender, 'email address': email_id} return user
+newuser = user_info('Johnson', 'johnson@gmail.com', 'male') print(newuser)
+newuser1 = user_info('John', 'john@gmail.com', 'male')
+print(newuser1)
+newuser2 = user_info('Jimmy', 'jimmy@gmail.com', 'male') print(newuser2)
+newuser3 = user_info('Dora', 'dora@gmail.com', 'female') print(newuser3)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'uname': 'Johnson', 'gender': 'johnson@gmail.com', 'email address': 'male'}
+{'uname': 'John', 'gender': 'john@gmail.com', 'email address': 'male'}
+{'uname': 'Jimmy', 'gender': 'jimmy@gmail.com', 'email address': 'male'} {'uname': 'Dora', 'gender': 'dora@gmail.com', 'email address': 'female'}
+>>>
+The function user_info takes the requisite information about the name, gender and email address of a user, and fill them up into a dictionary. Each value is stored in the designated key. The function receives information in raw form and turns it into textual information in a meaningful data structure. Up till now, I have stored and processed the information in the form of strings. You may confront situations where you have to store data in numerical form as well. There is an easy way out.
+def user_info(username, gender, email_id, age=''):
+user = {'uname': username, 'gender': gender, 'email address': email_id} if age:
+user['age'] = age
+return user
+newuser = user_info('Johnson', 'johnson@gmail.com', 'male', age=55) print(newuser)
+newuser1 = user_info('John', 'john@gmail.com', 'male', age=33) print(newuser1)
+newuser2 = user_info('Jimmy', 'jimmy@gmail.com', 'male', age= 54) print(newuser2)
+newuser3 = user_info('Dora', 'dora@gmail.com', 'female', age= 24) print(newuser3)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+{'uname': 'Johnson', 'gender': 'johnson@gmail.com', 'email address': 'male', 'age': 55}
+{'uname': 'John', 'gender': 'john@gmail.com', 'email address': 'male', 'age': 33}
+{'uname': 'Jimmy', 'gender': 'jimmy@gmail.com', 'email address': 'male', 'age': 54}
+{'uname': 'Dora', 'gender': 'dora@gmail.com', 'email address': 'female', 'age': 24}
+>>>
+I have added a new parameter to the function's definition and have also assigned this parameter a kind of empty default value.
+Function and While Loop
+You can pair up a function with a while loop. Let us jump to the text editor to see how you can do that.
+def user_info(username, email_id, gender ):
+info = "My name is " + username.title() + " and I am a new user, and my
+email ID is " + email_id.title() + ". My gender is " + gender.title() + "." return info.title()
+while True:
+print("\nPlease tell me about yourself.") user_name = input("Please enter your name: ") email = input("Please enter your email address: ") gen = input("Please enter your gender: ") newuser = user_info(user_name, email, gen)
+print("\n The user information is as follows: " + newuser + ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Please tell me about yourself.
+Please enter your name: John
+Please enter your email address: john@gmail.com
+Please enter your gender: male Please tell me about yourself.
+Please enter your name: jimmy
+Please enter your email address: jimmy@gmail.com
+Please enter your gender: male Please tell me about yourself.
+Please enter your name: dora
+Please enter your email address: dora@gmail.com
+Please enter your gender: female Please tell me about yourself.
+Please enter your name:
+The while loop lacks a quit condition therefore it will run on end and will keep asking about the name of users even after all the users have filled in their personal information. I will add a break statement in the same code so that users can exit the program when they have entered all the information. def user_info(username, email_id, gender ):
+info = "My name is " + username.title() + " and I am a new user, and my
+email ID is " + email_id.title() + ". My gender is " + gender.title() + "." return info.title()
+while True:
+print("\nPlease tell me about yourself.") print("(If you want to exit the program, enter 'q')") uname = input("Please enter your name: ") if uname == 'q': break
+uemail = input("Please enter your email address: ") if uemail == 'q':
+break
+ugen = input("Please enter your gender: ") if ugen == 'q': break
+newuser = user_info(uname, uemail, ugen)
+print("\n The user information is as follows: " + newuser + ".")
+This program will keep running until someone enters ‘q.’ Functions are flexible in inviting and using different types of data structures. You can easily pass a list to a specific function. Whether the list is of numbers, names, and even complex objects like dictionaries. When you do that, the function gets access to the specific contents of the list.
+def user_info(usersinfo):
+for userinfo in usersinfo:
+mg = "Hi, My name is " + userinfo.title() + ". I am here to take a walk-
+in interview." print(mg)
+candidate_names = ['jimmy', 'john', 'dora', 'johnson', 'james'] user_info(candidate_names)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+Hi, My name is Jimmy. I am here to take a walk-in-interview.
+Hi, My name is John. I am here to take a walk-in-interview.
+Hi, My name is Dora. I am here to take a walk-in-interview.
+Hi, My name is Johnson. I am here to take a walk-in-interview.
+Hi, My name is James. I am here to take a walk-in-interview.
+>>>
+If you run into an error, it can possibly be due to a missing argument. See the following error type.
+def user_info(usersinfo):
+for userinfo in usersinfo:
+mg = "Hi, My name is " + userinfo.title() + ". I am here to take a walk-
+in interview." print(mg)
+candidate_names = ['jimmy', 'john', 'dora', 'johnson', 'james'] user_info()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 7, in <module> user_info()
+TypeError: user_info() missing 1 required positional argument: 'usersinfo'
+>>>
+Therefore, you should not leave the parenthesis of the function empty.
+Functions allow you to modify different data types such as lists. You can first pass a list and then modify it as well. The changes you introduce to a list are permanent and allow a person to work efficiently. The following will pass the list without functions.
+to_buy_items = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system',
+'table lights'] bought_items = [] while to_buy_items:
+office = to_buy_items.pop()
+print("I am buying the " + office) bought_items.append(office)
+print("\nI have purchased and set up the following items in the office:") for bought_item in bought_items:
+print(bought_item)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I am buying the table lights
+I am buying the computer system
+I am buying the chair
+I am buying the table
+I am buying the fan
+I am buying the scanner
+I am buying the printer
+I have purchased and set up the following items in the office: table lights computer system chair table fan scanner printer
+>>>
+Now I will write two functions for two separate jobs. The code will be more efficient and interactive.
+def officeitems (to_buy_items, bought_items):
+while to_buy_items:
+office = to_buy_items.pop() print("I am buying the " + office) bought_items.append(office) def o_bought_items(bought_items): print("\nI have purchased and set up the following items in the office:") for bought_item in bought_items:
+print(bought_item)
+to_buy_items = ['printer', 'scanner', 'fan', 'table', 'chair', 'computer system',
+'table lights'] bought_items = []
+officeitems(to_buy_items, bought_items) o_bought_items(bought_items)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+I am buying the table lights
+I am buying the computer system
+I am buying the chair
+I am buying the table
+I am buying the fan
+I am buying the scanner
+I am buying the printer
+I have purchased and set up the following items in the office: table lights computer system chair table fan
+scanner printer
+>>> 
