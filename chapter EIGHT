@@ -1,0 +1,344 @@
+*****Chapter Eight: Object-Oriented Programming*****
+Object-oriented programming is the spirit of Python. It is one of the most effective approaches to develop software. Object-oriented programming suggests that you write effective classes to represent real-world situations and objects. While writing a class, you get the actual feel of automation. You get to build an object from a class and add appropriate personality traits to the same. The process of building objects from a class is dubbed as instantiation.
+In this chapter, I will explain how to write Python classes and how to create a lot of instances in a single class. I will also define the actions that I want to attribute to an object. You will also be able to store the classes in the form of modules and then import them to your program files.
+Python classes help you build complex programs and give you a feel for programming. You will get to know your code and the bigger concepts behind these codes. Classes can help you wrap up a lot of work in a short amount of time and meet complex challenges in the simplest ways. A class can turn a random program into sophisticated software.
+You can model any real-world object with the help of Python classes. In the next code snippet, I will write a code that will be modeled on a leopard. I will give the leopard a name, age, and color. I will add behavioral attributes to the class as well.
+Leopard Class
+After writing the leopard class, I will add instances to the same that will store the name, age and color of the object.
+class Leopard():
+"""This class will build the model of a leopard.""" def__init__(self, lname, lage, lcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.lname = lname self.lage = lage
+self.lcolor = lcolor
+def run(self): print(self.lname.title() + " is running fast out in the wild.")
+def attack(self):
+print(self.lname.title() + " is now attacking a deer who is grazing in the
+meadow.")
+This is how you can write a class and add attributes to it. I have created the class and add a couple of functions.
+Explaining the __init__() Method       
+It is a special method that is automatically run by Python when you create a new instance from the main Leopard class. The method two underscores in the front and two in the trail.
+I have defined the __init__() method and given it three attributes for the name, age, and the color of the leopard. Then I added two more methods that are about the behavioral traits of the leopard we are creating. These methods will print messages about the running and attacking of the leopard. If you want to understand it in a simpler form, you can consider the leopard a robot leopard. This will help you understand how Python helps in automating machines by modeling them on real-life objects.
+Now that we have the structure of the class, we can move on to create different objects. I will add an instance to the Leopard class.
+class Leopard():
+"""This class will build the model of a leopard."""
+def __init__(self, lname, lage, lcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.lname = lname self.lage = lage self.lcolor = lcolor
+def run(self): print(self.lname.title() + " is running fast out in the wild.")
+def attack(self):
+print(self.lname.title() + " is now attacking a deer who is grazing in the
+meadow.")
+leopard1 = Leopard('Tame', 9, 'yellow')
+print("The name of the leopard is " + leopard1.lname.title() + ".") print("The age of the leopard is " + str(leopard1.lage) + ".") print("The color of the leopard is " + leopard1.lcolor.title() + ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py The name of the leopard is Tame.
+The age of the leopard is 9.
+The color of the leopard is Yellow.
+>>>
+Now I will add more instances to the same class.
+class Leopard():
+"""This class will build the model of a leopard."""
+def __init__(self, lname, lage, lcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.lname = lname self.lage = lage self.lcolor = lcolor
+def run(self): print(self.lname.title() + " is running fast out in the wild.") def attack(self):
+print(self.lname.title() + " is now attacking a deer who is grazing in the
+meadow.")
+leopard1 = Leopard('Tame', 9, 'yellow')
+print("The name of the leopard is " + leopard1.lname.title() + ".") print("The age of the leopard is " + str(leopard1.lage) + ".") print("The color of the leopard is " + leopard1.lcolor.title() + ".")
+leopard2 = Leopard('Fame', 8, 'snow white')
+print("The name of the leopard is " + leopard2.lname.title() + ".") print("The age of the leopard is " + str(leopard2.lage) + ".") print("The color of the leopard is " + leopard2.lcolor.title() + ".")
+leopard3 = Leopard('Storm', 11, 'yellow')
+print("The name of the leopard is " + leopard3.lname.title() + ".") print("The age of the leopard is " + str(leopard3.lage) + ".") print("The color of the leopard is " + leopard3.lcolor.title() + ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py The name of the leopard is Tame.
+The age of the leopard is 9.
+The color of the leopard is Yellow.
+The name of the leopard is Fame.
+The age of the leopard is 8.
+The color of the leopard is Snow White.
+The name of the leopard is Storm.
+The age of the leopard is 11.
+The color of the leopard is Yellow.
+>>>
+Now that I have created an instance for the Leopard class, I will now add to it some additional methods that will make the robot leopard run wildly and attack the prey to hunt his meal. This is going to be quite interesting.
+class Leopard():
+"""This class will build the model of a leopard."""
+def __init__(self, lname, lage, lcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.lname = lname self.lage = lage self.lcolor = lcolor
+def run(self): print(self.lname.title() + " is running fast out in the wild.")
+def attack(self):
+print(self.lname.title() + " is now attacking a deer who is grazing in the
+meadow.")
+leopard1 = Leopard('Tame', 9, 'yellow')
+print("The name of the leopard is " + leopard1.lname.title() + ".") print("The age of the leopard is " + str(leopard1.lage) + ".") print("The color of the leopard is " + leopard1.lcolor.title() + ".") leopard1.run() leopard1.attack()
+leopard2 = Leopard('Fame', 8, 'snow white')
+print("The name of the leopard is " + leopard2.lname.title() + ".") print("The age of the leopard is " + str(leopard2.lage) + ".") print("The color of the leopard is " + leopard2.lcolor.title() + ".") leopard2.run() leopard2.attack()       
+leopard3 = Leopard('Storm', 11, 'yellow')
+print("The name of the leopard is " + leopard3.lname.title() + ".") print("The age of the leopard is " + str(leopard3.lage) + ".") print("The color of the leopard is " + leopard3.lcolor.title() + ".") leopard3.run() leopard3.attack()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py The name of the leopard is Tame.
+The age of the leopard is 9.
+The color of the leopard is Yellow.
+Tame is running fast out in the wild.
+Tame is now attacking a deer who is grazing in the meadow.
+The name of the leopard is Fame.
+The age of the leopard is 8.
+The color of the leopard is Snow White.
+Fame is running fast out in the wild.
+Fame is now attacking a deer who is grazing in the meadow.
+The name of the leopard is Storm.
+The age of the leopard is 11.
+The color of the leopard is Yellow.
+Storm is running fast out in the wild.
+Storm is now attacking a deer who is grazing in the meadow.
+>>>
+Python creates two separate instances if you keep the name, age and color of the leopard same. See the following example.
+class Leopard():
+"""This class will build the model of a leopard."""
+def __init__(self, lname, lage, lcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.lname = lname self.lage = lage self.lcolor = lcolor
+def run(self): print(self.lname.title() + " is running fast out in the wild.")
+def attack(self):
+print(self.lname.title() + " is now attacking a deer who is grazing in the
+meadow.")
+leopard1 = Leopard('Tame', 9, 'yellow')
+print("The name of the leopard is " + leopard1.lname.title() + ".") print("The age of the leopard is " + str(leopard1.lage) + ".") print("The color of the leopard is " + leopard1.lcolor.title() + ".") leopard2 = Leopard('Tame', 9, 'yellow')
+print("The name of the leopard is " + leopard2.lname.title() + ".") print("The age of the leopard is " + str(leopard2.lage) + ".") print("The color of the leopard is " + leopard2.lcolor.title() + ".")
+= RESTART: C:/Users/saifia computers/Desktop/sample.py The name of the leopard is Tame.
+The age of the leopard is 9.
+The color of the leopard is Yellow.
+The name of the leopard is Tame.
+The age of the leopard is 9.
+The color of the leopard is Yellow.
+>>>
+The Fish Class class Fish():
+"""This class will build the model of a leopard."""
+def __init__(self, fname, fage, fcolor):
+"""here I will initialize the name, age and color attributes of the class.""" self.fname = fname self.fage = fage self.fcolor = fcolor
+def swim(self):
+print(self.fname.title() + " is swimming at a fast pace against the
+current.") def hunt(self):
+print(self.fname.title() + " is hunting smaller fish to feed itself.")
+fish1 = Fish('Tuna', 2, 'yellow')
+print("The name of the fish is " + fish1.fname.title() + ".") print("The age of the fish is " + str(fish1.fage) + ".") print("The color of the fish is " + fish1.fcolor.title() + ".") fish1.swim() fish1.hunt()
+fish2 = Fish('whale', 50, 'blue & white')
+print("The name of the fish is " + fish2.fname.title() + ".")
+print("The age of the fish is " + str(fish2.fage) + ".") print("The color of the fish is " + fish2.fcolor.title() + ".") fish2.swim() fish2.hunt()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py The name of the fish is Tuna.
+The age of the fish is 2.
+The color of the fish is Yellow.
+Tuna is swimming at a fast pace against the current.
+Tuna is hunting smaller fish to feed itself.
+The name of the fish is Whale.
+The age of the fish is 50.
+The color of the fish is Blue & White.
+Whale is swimming at a fast pace against the current.
+Whale is hunting smaller fish to feed itself.
+>>>
+The Bike Class
+In this code sample, I will create bike class. I will add the model name, make, color and year of manufacturing to the class and display the information in a neatly formatted form.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear
+def fullname(self):
+fullbikename = str(self.byear) + ' ' + self.bmodel + ' ' + self.bmake + ' '
++ self.bcolor   return fullbikename.title()
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+2012 Cg-125 Honda Blue
+>>>
+The process is similar to that of the creation of a Leopard class. I have defined the __init__ () method and the self-parameters. Four parameters will define the make, model, color and year of making of the bike. When you are creating a new instance to the bike class, you will have to define the make, model, year and color of the bike. If you miss one of the parameters while creating an instance, you will see an interpreter error just like the following.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake
+self.bcolor = bcolor self.byear = byear
+def fullname(self):
+fullbikename = str(self.byear) + ' ' + self.bmodel + ' ' + self.bmake + ' '
++ self.bcolor   return fullbikename.title()
+bike1 = Bike('CG-125', 'blue', 2012) print(bike1.fullname())
+>>>= RESTART: C:/Users/saifia computers/Desktop/sample.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/sample.py", line 16, in <module> bike1 = Bike('CG-125', 'blue', 2012)
+TypeError: __init__() missing 1 required positional argument: 'byear'
+>>>
+Just like the Leopard class, you can create as many instances for the Bike class as you need. This program is helpful if you are looking forward to owning a bike showroom. You can fill in the bike class with the latest information whenever a new bike gets registered with the showroom for sale. This is how you allow your customers to view each bike and its specifications in a fast and efficient way. I will now add more instances to the Bike class to show how you can store more information to the database through a working Bike class. class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname())
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname())
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname())
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname())
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike4.fullname())
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+>>>
+Each attribute in the Bike class demands an initial value. You can set the initial value at zero. It also can be an empty string. When you are running a showroom, you need to tell your customers how many kilometers the bike has run on the road. To achieve this objective, you can integrate a method into the program. See the changes in the code. I will include an odometer reading method for the Bike class. class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def read_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.")
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.read_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.read_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.read_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016)
+print(bike4.fullname()) bike4.read_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike4.fullname()) bike5.read_odometer()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has run 0 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has run 0 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has run 0 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 0 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 0 kilometers on the road.
+>>>
+Python calls the __init__() method to form a new instance. It stores the values in the form of attributes just as it did for the past example. Python has now created a new attribute and adjusts its value to zero. Coupled with the attribute comes a new method, namely read_odometer(). This is how your customers can easily read the mileage of the bike. It is also helpful for you, as you can easily track how many miles your car has run.
+You have the power to change the value of the attributes in different ways.
+You can directly change the value of the attribute by an instance. You can set its value with the help of a method or increment the same by a method. In the following code sample, I will test how we can make the above-mentioned changes. I have also changed the read_odometer() method to reading_odometer() method to make more current and interactive.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.")
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.odometer_reading = 21 bike1.reading_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.odometer_reading = 27 bike2.reading_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.odometer_reading = 30 bike3.reading_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname()) bike4.reading_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike4.fullname()) bike5.reading_odometer()
+>>>= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has run 21 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has run 27 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has run 30 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 0 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 0 kilometers on the road.
+>>>
+You can also change the default value at 50 kilometers to manage the difference of mileage consumed in transporting the bike from one place to another.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 50
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.")
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.odometer_reading = 100 bike1.reading_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.odometer_reading = 500 bike2.reading_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.odometer_reading = 700 bike3.reading_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname()) bike4.reading_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike4.fullname()) bike5.reading_odometer()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has run 100 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has run 500 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has run 700 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 50 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 50 kilometers on the road.
+>>>
+Proper Modification of Values
+It is quite helpful to have a bunch of methods that would update different attributes of your program. Instead of directly accessing multiple attributes, you can pass the latest value to a newly added method and let it handle updating the program. The program will do the updating internally and you do not have to worry about it anymore. The new method will be dubbed as updating_the_odometer().
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 50
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run" + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.updating_the_odometer(100) bike1.reading_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.updating_the_odometer(1000) bike2.reading_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.updating_the_odometer(700) bike3.reading_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname()) bike4.reading_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike4.fullname()) bike5.reading_odometer()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has 100 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has 1000 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has 700 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has 50 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has 50 kilometers on the road.
+>>>
+You can make further experiments with the odometer method. A major problem in a showroom is keeping tabs on who is reversing the odometer of the motorbikes. If you are a true businessman, you will not like to dupe your customers. However, sometimes it is not that you who want to dupe the customers. It is your employees who are trying to bag extra profit in addition to their commission. You must stop this practice if you want to live up to your customers' expectations and keep your reputation intact. You can add some logic to your program to ensure no rolling back of the odometer by anyone. I will integrate an if-else statement to the Bike class and do a few changes to make it possible.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   
+return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.")
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.updating_the_odometer(100) bike1.reading_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.updating_the_odometer(1000) bike2.reading_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.updating_the_odometer(700) bike3.reading_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname()) bike4.updating_the_odometer(40) bike4.reading_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike5.fullname()) bike5.updating_the_odometer(0) bike5.reading_odometer()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has run 100 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has run 1000 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has run 700 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 40 kilometers on the road.
+We Have A Bike That Hit The Markets In 2018. The Model Is Heritage Classic. The Bike Is Manufactured By Harley Davidson. Its Color Is Black.
+This bike has run 0 kilometers on the road.
+>>>
+You can increase the value of an attribute by introducing a simple method to the program. I will another method to the class to make it work. I will add incremental values to each of the five instances I have created. The method will tell Python to add up the incremental value to the existing value and run the program. The incremented value will be displayed in a separate print statement in the code. class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+bike1 = Bike('CG-125', 'Honda', 'blue', 2012) print(bike1.fullname()) bike1.updating_the_odometer(100) bike1.reading_odometer() bike1.incrementing_odometer(1000) bike1.reading_odometer()
+bike2 = Bike('F 900 R', 'BMW', 'black', 2014) print(bike2.fullname()) bike2.updating_the_odometer(1000) bike2.reading_odometer() bike2.incrementing_odometer(500) bike2.reading_odometer()
+bike3 = Bike('F 900 XR', 'BMW', 'blue', 2014) print(bike3.fullname()) bike3.updating_the_odometer(700) bike3.reading_odometer() bike3.incrementing_odometer(1000) bike3.reading_odometer()
+bike4 = Bike('R 1250 RT', 'BMW', 'brown', 2016) print(bike4.fullname()) bike4.updating_the_odometer(40) bike4.reading_odometer() bike4.incrementing_odometer(1000) bike4.reading_odometer()
+bike5 = Bike('Heritage Classic', 'Harley Davidson', 'black', 2018) print(bike5.fullname()) bike5.updating_the_odometer(0) bike5.reading_odometer()
+bike5.incrementing_odometer(10000) bike5.reading_odometer()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2012. The Model Is Cg-125. The Bike Is Manufactured By Honda. Its Color Is Blue.
+This bike has run 100 kilometers on the road.
+This bike has run 1100 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 R. The Bike Is Manufactured By BMW. Its Color Is Black.
+This bike has run 1000 kilometers on the road.
+This bike has run 1500 kilometers on the road.
+We Have A Bike That Hit The Markets In 2014. The Model Is F 900 Xr. The Bike Is Manufactured By BMW. Its Color Is Blue.
+This bike has run 700 kilometers on the road.
+This bike has run 1700 kilometers on the road.
+We Have A Bike That Hit The Markets In 2016. The Model Is R 1250 Rt. The Bike Is Manufactured By BMW. Its Color Is Brown.
+This bike has run 40 kilometers on the road.
+This bike has run 1040 kilometers on the road.
+We Have A Bike That Hit The Markets In 2018. The Model Is Heritage Classic. The Bike Is Manufactured By Harley Davidson. Its Color Is Black.
+This bike has run 0 kilometers on the road.
+This bike has run 10000 kilometers on the road.
+>>>
