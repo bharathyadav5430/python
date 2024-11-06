@@ -1,0 +1,214 @@
+Chapter Nine: The Inheritance Class
+Now that you have learned how to write a class, it is pertinent to mention that Python classes are well known for the ease of use they offer to programmers. Once you have written a class, you can reuse it multiple times. There is a process called inheritance in which a subclass is inherited from the parent class. The inherited class is named that way because it inherits the attributes of the parent class. The inherited class is dubbed as the child class. It can use each attribute and method of the parent class. However, you also can create new attributes only for the child class.
+Just as you did for the parent class, you will also have to use the __init__() method for the child class. I will create a child class of racer bikes.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.")
+def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear):
+super().__init__(bmodel, bmake, bcolor, byear)
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname())                        
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname())                        
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+>>>
+The most important thing to keep in mind while creating a child class is to keep the child class inside the parent class. The name of the child class must include parenthesis that carry the name of the parent class. I have added one additional function, the super function that aids Python in forming connections between the child class and the parent class. The child class has taken all the attributes of the parent class. I have not yet added any special attribute to the racer bike.
+Child Class in Python 2.7
+If you are using Python 2.7, the child class will appear to be a bit different. See the following code and note the difference. class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading: self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear):
+super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear)
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname())                        
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname())                        
+The only change I made was in the super function. I filled in the parenthesis with the name of the child class and self-parameter. An interesting thing is that this change does not affect the result of the program, no matter if you do it in Python 3 or 2.7. However, the former technique will not work in 2.7. You can see the result of the program as under:
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+>>>
+Child Class Attributes
+Once the child class inherits the parent class's attributes, you can go on to add to it new methods and attributes. I will use the same program and add new attributes for the child class.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.")
+def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear): super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear) self.performance_tire = 'three textile layered'
+def describe_tires(self):
+print("This racer bike has " + self.performance_tire + " performance
+tires.")
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_tires()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_tires()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_tires()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+>>>
+In the next code snippet, I will add another attribute to the child class. This attribute shows why a racer bike has a higher rate of aerodynamic efficiency.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor
+self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.")
+def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear): super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear) self.performance_tire = 'three textile layered' self.aerodynamic_efficiency = 'better lift/drag ratio'
+def describe_tires(self):
+print("This racer bike has " + self.performance_tire + " performance
+tires.") def describe_aerodynamics(self):
+print("This racer bike has " + self.aerodynamic_efficiency + " for
+improved aerodynamic efficiency.")
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_tires() racer1.describe_aerodynamics()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_tires() racer2.describe_aerodynamics()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_tires() racer3.describe_aerodynamics()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+>>>
+Overriding Methods from Parent Class
+You can override methods from the parent class by defining a method with the same name as in the parent class. Python will then block the method's execution from the parent class, allowing the child class to override the method.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0 def fullname(self): fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage): self.odometer_reading += bmileage
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear): super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear) self.performance_tire = 'three textile layered' self.aerodynamic_efficiency = 'better lift/drag ratio'
+def describe_tires(self):
+print("This racer bike has " + self.performance_tire + " performance
+tires.") def describe_aerodynamics(self):
+print("This racer bike has " + self.aerodynamic_efficiency + " for
+improved aerodynamic efficiency.")
+def incrementing_odometer(self, bmileage):
+print("I cannot increment the odometer.")
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_tires() racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_tires() racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_tires() racer3.describe_aerodynamics() racer3.reading_odometer() racer3.incrementing_odometer(5000)
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+>>>
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has three textile layered performance tires.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+>>>
+An interesting about classes is the flexibility they have to offer. For example, instead of making the performance tires an attribute, we can turn it into a separate class. After that we can add as many instances to this new class as we want to.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0 def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage
+else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage):
+self.odometer_reading += bmileage
+class Performancetires():
+def __init__(self, performance_tire= 'three textile layered'):
+self.performance_tire = performance_tire   
+def describe_performancetires(self):        
+print("This racer bike has " + self.performance_tire + " performance
+tires.")
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear): super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear) self.performancetires = Performancetires() self.aerodynamic_efficiency = 'better lift/drag ratio'
+def describe_aerodynamics(self):
+print("This racer bike has " + self.aerodynamic_efficiency + " for
+improved aerodynamic efficiency.") def incrementing_odometer(self, bmileage):
+print("I cannot increment the odometer.")
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer1.performancetires.describe_performancetires()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer2.performancetires.describe_performancetires()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_aerodynamics() racer3.reading_odometer() racer3.incrementing_odometer(5000)
+racer3.performancetires.describe_performancetires()
+= RESTART: C:/Users/saifia computers/Desktop/sample.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
