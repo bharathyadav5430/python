@@ -1,0 +1,136 @@
+*****Chapter Ten: Importing Classes******
+You can create a module of Python classes and use it later on to create different programs. When you save a Python program with the extension .py, it becomes a Python module. I have saved it with a proper file name. I will now open a new file, name it as bike.py and save the following code.
+class Bike():
+"""This class will build the model of a bike.""" def __init__(self, bmodel, bmake, bcolor, byear):
+self.bmodel = bmodel self.bmake = bmake self.bcolor = bcolor self.byear = byear self.odometer_reading = 0
+def fullname(self):
+fullbikename = "We have a bike that hit the markets in " + str(self.byear) + ". The model is " + self.bmodel + ". The bike is manufactured by " + self.bmake + ". Its color is " + self.bcolor + "."   return fullbikename.title()
+def reading_odometer(self):
+print("This bike has run " + str(self.odometer_reading) + " kilometers
+on the road.") def updating_the_odometer(self, bmileage): self.odometer_reading = bmileage if bmileage >= self.odometer_reading:
+self.odometer_reading = bmileage else:
+print("You are not authorized to roll back the reading of the odometer.") def incrementing_odometer(self, bmileage):
+self.odometer_reading += bmileage
+class Performancetires():
+def __init__(self, performance_tire= 'three textile layered'):
+self.performance_tire = performance_tire   
+def describe_performancetires(self):        
+print("This racer bike has " + self.performance_tire + " performance
+tires.")
+class RacerBike(Bike):
+def __init__(self, bmodel, bmake, bcolor, byear): super(RacerBike,self).__init__(bmodel, bmake, bcolor, byear) self.performancetires = Performancetires() self.aerodynamic_efficiency = 'better lift/drag ratio'
+def describe_aerodynamics(self):
+print("This racer bike has " + self.aerodynamic_efficiency + " for
+improved aerodynamic efficiency.") def incrementing_odometer(self, bmileage): print("I cannot increment the odometer.")
+Importing Multiple Classes
+I have saved the file and closed it. Now I will open a new file and name it my_bike.py. I’ll save it in the same location where I have saved bike.py. For example, in my case I have saved both on my desktop to access them easily. Whatever the location is, it should be the same for the two files or the code will not work in the way you have foreseen it. Now that the file my_bike has been saved. I will now write the code in it to import the code from the file bike.py.
+from bike import Bike from bike import Performancetires from bike import RacerBike
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer1.performancetires.describe_performancetires()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer2.performancetires.describe_performancetires()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_aerodynamics() racer3.reading_odometer() racer3.incrementing_odometer(5000)
+racer3.performancetires.describe_performancetires()
+>>>= RESTART: C:/Users/saifia computers/Desktop/my_bike.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+>>>
+As all the three classes were written in the file bike.py, I have imported all of them in a sequence. As there are three classes stored in a single module, if you try to import only one of them, you will see an error in the interpreter. The error will be like this. from bike import Bike
+racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer1.performancetires.describe_performancetires()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname())
+racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer2.performancetires.describe_performancetires()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_aerodynamics() racer3.reading_odometer() racer3.incrementing_odometer(5000)
+racer3.performancetires.describe_performancetires() = RESTART: C:/Users/saifia computers/Desktop/my_bike.py Traceback (most recent call last):
+File "C:/Users/saifia computers/Desktop/my_bike.py", line 3, in <module> racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')
+NameError: name 'RacerBike' is not defined
+>>>
+However, if you save a single class in one module, you can correct this error. from bike import Bike
+racer1 = Bike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        
+racer2 = Bike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname())
+racer3 = Bike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname())
+= RESTART: C:/Users/saifia computers/Desktop/my_bike.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+>>>
+Importing Module
+You also have an option to import a complete module and then access all the classes in it. This is the simplest and the easiest of the methods to execute a program. import bike
+racer1 	= 	bike.RacerBike('URS: 	Gravel 	Riding', 	'BMC', 	'Grey',
+'2017')               
+print(racer1.fullname())                        racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer1.performancetires.describe_performancetires()
+racer2 = bike.RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer2.performancetires.describe_performancetires()
+racer3 = bike.RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_aerodynamics() racer3.reading_odometer()
+racer3.incrementing_odometer(5000)
+racer3.performancetires.describe_performancetires()
+= RESTART: C:/Users/saifia computers/Desktop/my_bike.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+>>>
+Importing All Classes
+There is a trick to import all classes at once. from bike import * racer1 = RacerBike('URS: Gravel Riding', 'BMC', 'Grey', '2017')               print(racer1.fullname())                        racer1.describe_aerodynamics() racer1.reading_odometer() racer1.incrementing_odometer(1000)
+racer1.performancetires.describe_performancetires()
+racer2 = RacerBike('Trackmachine', 'BMC', 'Blue', '2015')               print(racer2.fullname()) racer2.describe_aerodynamics() racer2.reading_odometer() racer2.incrementing_odometer(1000)
+racer2.performancetires.describe_performancetires()
+racer3 = RacerBike('Alpenchallenge', 'BMC', 'Red', '2012')               print(racer2.fullname()) racer3.describe_aerodynamics() racer3.reading_odometer() racer3.incrementing_odometer(5000)
+racer3.performancetires.describe_performancetires()
+= RESTART: C:/Users/saifia computers/Desktop/my_bike.py
+We Have A Bike That Hit The Markets In 2017. The Model Is Urs: Gravel Riding. The Bike Is Manufactured By Bmc. Its Color Is Grey.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+We Have A Bike That Hit The Markets In 2015. The Model Is
+Trackmachine. The Bike Is Manufactured By Bmc. Its Color Is Blue.
+This racer bike has better lift/drag ratio for improved aerodynamic efficiency.
+This bike has run 0 kilometers on the road.
+I cannot increment the odometer.
+This racer bike has three textile layered performance tires.
+>>> 
+Conclusion
+Now that you have made it to the end of the book, I hope you have understood each concept of Python coding to the hilt. I hope that you have practiced each code very well and have also digested it well.
+The next step is to keep practicing the codes that I have given and explained the book. Python coding is easier compared to other programming languages. The editor is quite helpful as the multiple colors in it guide you through the codes. The most interesting feature of Python is the display of errors. Each error carries in it its solution as well as it indicates you where the problem lies. You can track the error, rectify it, and run the program again.
+You have learned from the basics like datatypes to the advanced stages like object-oriented programming. All the concepts were explained with due depth so that when you have gone through them, you are well-versed in executing them yourself.
+Coding knowledge is likely to slip off your mind right after you finish the book. Therefore, the best method to retain this knowledge is to keep practicing, creating new programs. You will start enjoying it finally. Python is the best language if you are interested in automation, machine learning, and deep learning models. You can use it to be a master of artificial intelligence systems and data mining systems.
+References https://phoenixnap.com/kb/how-to-install-python-3-windows
