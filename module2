@@ -1,0 +1,112 @@
+module 2:
+1. Introduction to Variables
+•	What is a Variable?
+o	A variable is like a container or storage box in programming. It holds data or values, which can change or be reused throughout a program.
+o	Think of a variable as a label that names a specific value, so you can use that label instead of the value itself. For example, a friend’s name saved as a contact in your phone. You use their name to find their number, instead of remembering the number directly.
+•	Why Do We Need Variables?
+o	Variables make our code more readable and reusable. Imagine needing to change a number in multiple places — instead, we can use a variable and just update it once.
+2. Creating and Naming Variables in Python
+•	In Python, creating a variable is simple. We just need to give it a name and assign a value using the equals sign (=).
+•	Examples:
+age = 16       # age is a variable that stores the number 16
+name = "Alex"  # name is a variable that stores the text "Alex"
+height = 5.8   # height is a variable that stores the decimal 5.8
+Rules for Naming Variables:
+•	Start with a letter or an underscore (_).
+•	Don’t use spaces; use underscores (student_age) instead.
+•	Avoid using reserved keywords like print or if.
+
+3. Example 1: Simple Variables
+Let’s say we’re creating a small script about a student:
+student_name = "Maria"
+student_age = 14
+student_grade = "9th Grade"
+
+print("Student Name:", student_name)
+print("Age:", student_age)
+print("Grade:", student_grade)
+Explanation:
+•	Here, student_name, student_age, and student_grade are variables holding different types of information (text and number).
+•	Using variables makes it easy to print or modify the student’s details in the program.
+4. Different Data Types in Variables
+•	Integer (int): Stores whole numbers (e.g., 5, 20).
+•	Float (float): Stores decimal numbers (e.g., 5.7, 20.5).
+•	String (str): Stores text (e.g., "Hello", "Python").
+•	Boolean (bool): Stores True or False values.
+1. Numeric Data Types
+Python has three primary numeric types: int, float, and complex.
+Integer (int): Stores whole numbers without decimals, either positive or negative.
+Example:
+age = 21       # Integer
+population = 1000000
+print("Age:", age)
+print("Population:", population)
+Float (float): Stores numbers with decimals, useful for precise calculations.
+Example:
+price = 19.99   # Float
+weight = 55.5
+print("Price:", price)
+print("Weight:", weight)
+Complex (complex): Stores complex numbers, which have a real and an imaginary part, represented by a + bj.
+complex_num = 3 + 4j
+
+
+
+2. String (str)
+•	Strings are used to store text or sequences of characters. Strings in Python are enclosed in either single (' ') or double (" ") quotes.
+•	Strings are commonly used for names, descriptions, messages, etc.
+name = "Alice"              # Single word
+message = "Hello, World!"   # Sentence with spaces and punctuation
+print("Name:", name)
+print("Message:", message)
+         Multi-line Strings: To store multi-line text, you can use triple quotes (''' ''' or """ """).
+paragraph = """This is a
+multi-line string that can
+span multiple lines."""
+print(paragraph)
+3. Boolean (bool)
+•	Boolean data types represent True or False values, which are essential for decision-making in programs.
+•	Boolean values are often used in conditional statements and comparisons.
+is_student = True
+has_access = False
+print("Is Student:", is_student)
+print("Has Access:", has_access)
+4. List
+•	A list is a collection of multiple values stored in a single variable. Lists are ordered, mutable (changeable), and allow duplicate values.
+•	Lists are created using square brackets [] and can contain different data types.
+fruits = ["apple", "banana", "cherry"]
+scores = [95, 88, 76, 88]  # Lists can contain duplicate values
+print("Fruits:", fruits)
+print("Scores:", scores)
+
+# Accessing list items
+print("First fruit:", fruits[0])
+5. Tuple
+•	A tuple is similar to a list, but it is immutable, meaning once created, you cannot modify its items.
+•	Tuples are often used to store data that shouldn’t be changed.
+dimensions = (1920, 1080)  # Tuple holding width and height
+colors = ("red", "green", "blue")
+print("Dimensions:", dimensions)
+print("Colors:", colors)
+
+# Accessing tuple items
+print("First color:", colors[0])
+6. Dictionary (dict)
+•	A dictionary stores data in key-value pairs. Each value in a dictionary is associated with a unique key, making it fast to retrieve values based on the key.
+•	Dictionaries are created using curly braces {} and are useful for structured data.
+student = {
+    "name": "John",
+    "age": 22,
+    "major": "Computer Science"
+}
+print("Student Data:", student)
+print("Name:", student["name"])   # Accessing value by key
+print("Age:", student["age"])
+7. Set
+•	A set is an unordered collection of unique items, meaning it does not allow duplicates.
+•	Sets are commonly used for operations that involve uniqueness, such as removing duplicates or performing mathematical set operations.
+unique_numbers = {1, 2, 3, 4, 4, 5}  # Duplicates are ignored
+print("Unique numbers:", unique_numbers)
+
+
+
