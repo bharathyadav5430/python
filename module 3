@@ -1,0 +1,83 @@
+module 3:
+1. Arithmetic Expressions
+These involve mathematical operators and are used to perform calculations.
+Operators: + (addition), - (subtraction), * (multiplication), / (division), ** (exponentiation), % (modulus), // (floor division).
+# Examples
+a = 10
+b = 3
+
+addition = a + b          # 13
+subtraction = a - b       # 7
+multiplication = a * b    # 30
+division = a / b          # 3.333...
+modulus = a % b           # 1 (remainder of 10/3)
+exponent = a ** b         # 1000 (10 raised to the power of 3)
+floor_division = a // b   # 3 (10 divided by 3, rounded down)
+2. Relational (Comparison) Expressions
+Used to compare values. These expressions return True or False and are useful in conditional statements.
+Operators: == (equal to), != (not equal to), > (greater than), < (less than), >= (greater than or equal to), <= (less than or equal to).
+# Examples
+x = 5
+y = 10
+
+is_equal = x == y          # False
+is_not_equal = x != y      # True
+is_greater = x > y         # False
+is_less = x < y            # True
+is_greater_equal = x >= y  # False
+is_less_equal = x <= y     # True
+3. Logical Expressions
+Combine multiple conditions using logical operators and are often used in control flow statements.
+Operators: and, or, not
+# Examples
+a = True
+b = False
+
+both_true = a and b        # False (both need to be True)
+either_true = a or b       # True (only one needs to be True)
+not_a = not a              # False (reverses the value of a)
+4. Assignment Expressions
+Used to assign values to variables. In Python, you can use the standard assignment = or the walrus operator := (introduced in Python 3.8), which allows you to assign a value as part of an expression.
+# Standard assignment
+number = 10
+number += 5                # Equivalent to number = number + 5, now number is 15
+
+5. Conditional Expressions (Ternary Operator)
+A shorthand way of writing an if-else statement. It’s used to evaluate a condition and return one of two values based on the result.
+# Example
+age = 18
+status = "Adult" if age >= 18 else "Minor"
+print(status)              # Output: "Adult"
+7. Membership Expressions
+Used to check if a value is present in a sequence (like a list, tuple, or string).
+Operators: in, not in
+# Examples
+fruits = ["apple", "banana", "cherry"]
+
+has_apple = "apple" in fruits      # True
+has_orange = "orange" not in fruits # True
+8. Identity Expressions
+Used to check if two variables refer to the same object in memory.
+Operators: is, is not
+# Examples
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a is b)        # True (b is the same object as a)
+print(a is c)        # False (c is a different object, even if it has the same contents)
+
+Summary Table of Expression Types
+Expression Type	Example	Description
+Arithmetic	a + b, a * b, a / b	Performs math calculations
+Relational	a == b, a > b, a <= b	Compares values, returns True or False
+Logical	a and b, a or b, not a	Combines conditions with logical operators
+Assignment	x = 5, x += 2, y := 10	Assigns values to variables
+Conditional (Ternary)	result = "Yes" if x > 0 else "No"	Shorthand for if-else
+String	"Hello " + "World!", "ha" * 3	Concatenates or repeats strings
+Membership	"apple" in fruits	Checks if a value is in a sequence
+Identity	a is b, a is not c	Checks if two variables are the same object
+
+                                   
+
+
