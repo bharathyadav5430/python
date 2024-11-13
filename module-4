@@ -1,0 +1,70 @@
+Module-4
+3. Mutable vs Immutable Objects
+In Python, objects are categorized as mutable or immutable:
+•	Mutable objects can be changed after creation. Examples include lists, dictionaries, and sets.
+•	Immutable objects cannot be changed once created. Examples include integers, floats, strings, and tuples.
+Example of mutable object:
+# Lists are mutable
+my_list = [1, 2, 3]
+my_list.append(4)       # Modifying the list by adding an element
+print(my_list)          # Output: [1, 2, 3, 4]
+Example of immutable object:
+# Strings are immutable
+greeting = "Hello"
+# greeting[0] = "h"     # This will raise an error because strings are immutable
+new_greeting = greeting.lower()  # Instead, you create a new string
+print(new_greeting)              # Output: "hello"
+Why does this matter?
+•	Immutable objects are safer for operations where data shouldn’t change accidentally.
+•	Mutable objects are convenient when you need to update or modify data frequently.
+
+
+
+•	Summary
+Concept	Description	Example
+Define Variable	Creating a named container for a value	age = 25, price = 19.99
+Data Types	Types of values (int, float, string, etc.)	int, float, str
+Mutable Objects	Can be modified after creation	list, dict, set
+Immutable Objects	Cannot be modified after creation	int, float, str, tuple
+Expressions	Combinations of values, variables, and operators	a + b, "Hello " + "world!"
+
+1. Basic import Statement
+Using import loads the entire module, allowing us to access any function or variable within it by referencing the module's name.
+Example: Importing the math module
+import math
+# Now we can use math functions by prefixing them with "math."
+print(math.sqrt(25))     # Output: 5.0
+print(math.pi)           # Output: 3.141592653589793
+print(math.factorial(5)) # Output: 120
+
+Here, math.sqrt, math.pi, and math.factorial are used to get the square root, the constant π, and the factorial, respectively. We always refer to them with math. because we imported the entire module.
+2. from ... import Statement
+The from ... import statement allows us to import specific parts of a module. This way, we don’t need to reference the module's name each time we use one of its functions or constants.
+Example: Importing specific functions from math
+from math import sqrt, pi
+
+# Now we can use sqrt and pi directly without "math."
+print(sqrt(16))     # Output: 4.0
+print(pi)           # Output: 3.141592653589793
+Here, we only imported sqrt and pi from math, so we can use them directly without the math. prefix. This can make code cleaner if only a few functions are needed from a module.
+3. Using as to Alias a Module or Function
+Sometimes, a module name or function is long, and we may want to give it a shorter alias using as. This can also help avoid conflicts if different modules have functions with the same name.
+Example: Aliasing the math module
+Here, we renamed math to m, making it quicker to type.
+import math as m
+
+# Now we can use math functions with the alias "m"
+print(m.sqrt(36))    # Output: 6.0
+print(m.pi)          # Output: 3.141592653589793
+Example Modules in Action
+Using random module
+The random module provides functions to generate random numbers, which is useful in games, simulations, and any scenario that requires randomness.
+import random
+print(random.randint(1, 10))      # Random integer between 1 and 10
+print(random.choice(['apple', 'banana', 'cherry']))   # Randomly select from a list
+
+Explanation:
+•	random.randint(a, b) gives a random integer between a and b, inclusive.
+•	random.choice(sequence) selects a random item from a sequence (like a list).
+Using os module
+The os module helps interact with the operating system, allowing us to manage files and directories, check paths, and more.
