@@ -1,0 +1,49 @@
+Module 5:
+1. Using print() for Output
+The print() function displays information to the user. You can use it to show strings, numbers, or even complex expressions. It’s like Python’s way of “talking” to users.
+Syntax:
+print(value1, value2, ..., sep=' ', end='\n')
+•	value1, value2, etc.: The values to be printed. Multiple items can be printed by separating them with commas.
+•	sep: Defines the separator between multiple values. Default is a space (' ').
+•	end: Specifies what is printed at the end of the line. Default is a newline ('\n'), but you can change it.
+Examples:
+print("Hello, world!")                     # Output: Hello, world!
+print("My age is", 20)                     # Output: My age is 20
+print("Python", "is", "fun", sep="-")      # Output: Python-is-fun
+print("Stay positive!", end=" :)")         # Output: Stay positive! :)
+
+In the above examples:
+•	sep changes the separator from space to a dash -.
+•	end replaces the default newline with a smiley face, keeping everything on one line.
+
+2. Using input() for Input
+The input() function allows us to receive input from the user. When input() is called, the program waits until the user types something and presses Enter.
+Syntax:
+variable = input(prompt)
+•	prompt: A message displayed to the user before waiting for their input (e.g., "Enter your name: ").
+•	Important: input() always returns the user input as a string.
+Examples:
+name = input("What is your name? ")
+print("Hello,", name)
+
+age = input("How old are you? ")
+print("You are", age, "years old.")
+Explanation:
+•	Here, input("What is your name? ") displays a prompt and stores the input in name.
+•	input("How old are you? ") does the same but stores the age. Notice that age will be a string, even if the user enters a number.
+
+3. Converting Input to Other Data Types
+Since input() returns a string, we often need to convert this input to other types, like integers or floats.
+Examples:
+# Convert input to an integer
+age = int(input("Enter your age: "))         # User enters 20
+print("Next year, you will be", age + 1)
+
+# Convert input to a float
+height = float(input("Enter your height in meters: "))  # User enters 1.75
+print("Your height is", height, "meters.")
+Explanation:
+•	int(input("Enter your age: ")) converts the input to an integer. If the user enters 20, it’s stored as 20 (an integer).
+•	float(input("Enter your height: ")) converts input to a float, useful for values with decimal points.
+
+
